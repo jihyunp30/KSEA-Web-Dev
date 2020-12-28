@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./aboutPage.css";
-import purdueLogo from "./image/KSEA YG PURDUE LOGO.png";
+import purdueLogo from '../../assets/KSEA YG PURDUE LOGO.png';
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -117,4 +117,4 @@ function AboutPage(props) {
     );
 }
 
-export default App;
+export default AboutPage

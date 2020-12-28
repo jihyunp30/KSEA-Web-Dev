@@ -25,7 +25,7 @@ function MainPage(props) {
                 <div>
                     <Nav>
                         <NavDropdown id='nav_text' title='About'>
-                        <NavDropdown.Item id='nav_subtext'>About KSEA</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
                         <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
                         <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
