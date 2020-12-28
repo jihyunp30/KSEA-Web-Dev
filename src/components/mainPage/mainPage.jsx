@@ -17,17 +17,17 @@ function MainPage(props) {
     return(
         <div>
             <div id="heading">
-                <hr id="top_line" align="left"></hr>
+                <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
-                    <Image width="350" height="110" src={logo} />
+                    <img width="420" height="132" src={logo} />
                 </div>
                 <div>
                     <Nav>
                         <NavDropdown id='nav_text' title='About'>
-                        <NavDropdown.Item id='nav_text'>About KSEA</NavDropdown.Item>
-                        <NavDropdown.Item id='nav_text'>Members</NavDropdown.Item>
-                        <NavDropdown.Item id='nav_text'>Events</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext'>About KSEA</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link id='nav_text' href="/sub">Calendar</Nav.Link>
                         <Nav.Link id='nav_text'>News</Nav.Link>
@@ -35,7 +35,6 @@ function MainPage(props) {
                         <Nav.Link id='nav_text'>Research</Nav.Link>
                     </Nav>
                 </div>
-                <hr id="bot_line" align="left"></hr>
             </div>
             <div id='body'>
                 <div id='body_carousel'>

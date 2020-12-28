@@ -17,6 +17,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/sub" component={SubPage} />
+            <Route exact path="/events" render={() => {window.location.href="eventAndMemberPage/events+members/events.html"}} />
+            <Route exact path="/members" render={() => {window.location.href="eventAndMemberPage/events+members/members.html"}} />
           </Switch>
         </div>
       </Router>
