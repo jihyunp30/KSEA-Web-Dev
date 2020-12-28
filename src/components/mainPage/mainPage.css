@@ -24,17 +24,6 @@ html {
     margin-bottom: 5em;
 }
 
-#title {
-    letter-spacing: 4px;
-    font-size: 70px;
-    display: inline;
-}
-
-#subtitle {
-    margin-left: 30px;
-    display: inline;
-}
-
 #top_line {
     width: 75%;
     background-color: var(--black);

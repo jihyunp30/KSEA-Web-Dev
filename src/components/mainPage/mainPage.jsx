@@ -6,19 +6,21 @@ import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Image from 'react-bootstrap/Image'
+
 
 import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
-
+import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 
 function MainPage(props) {
     return(
         <div>
             <div id="heading">
                 <hr id="top_line" align="left"></hr>
+                
                 <div id='heading_text'>
-                    <h1 id='title'>KSEA</h1>
-                    <h4 id='subtitle'>YG Purdue Chapter</h4>
+                    <Image width="350" height="110" src={logo} />
                 </div>
                 <div>
                     <Nav>
@@ -27,7 +29,7 @@ function MainPage(props) {
                         <NavDropdown.Item id='nav_text'>Members</NavDropdown.Item>
                         <NavDropdown.Item id='nav_text'>Events</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link id='nav_text'>Calendar</Nav.Link>
+                        <Nav.Link id='nav_text' href="/sub">Calendar</Nav.Link>
                         <Nav.Link id='nav_text'>News</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text'>Research</Nav.Link>

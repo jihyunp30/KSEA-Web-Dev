@@ -4,10 +4,23 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MainPage from "./components/mainPage/mainPage"
+import SubPage from "./components/subPage"
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <MainPage></MainPage>
+    <Router>
+        <div className="App">
+          {/* <Base></Base> */}
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/sub" component={SubPage} />
+          </Switch>
+        </div>
+      </Router>
+    //<MainPage></MainPage>
   );
 }
 
