@@ -6,7 +6,6 @@ import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Image from 'react-bootstrap/Image'
 
 
 import team_picture from '../../assets/IMG_2629.jpg'
@@ -20,7 +19,7 @@ function MainPage(props) {
                 <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
-                    <img width="420" height="132" src={logo} />
+                    <img alt = "heading_text" width="500" height="132" src={logo} />
                 </div>
                 <div>
                     <Nav>
