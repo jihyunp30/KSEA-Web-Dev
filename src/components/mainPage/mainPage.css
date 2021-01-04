@@ -10,7 +10,6 @@ html {
   margin:10px auto;
   width:99%;
   height:98%;
-  
 }
 
 #heading {
@@ -20,36 +19,23 @@ html {
 
 #heading_text {
     margin: 4em;
-    margin-top: 5em;
-    margin-bottom: 5em;
-}
-
-#title {
-    letter-spacing: 4px;
-    font-size: 70px;
-    display: inline;
-}
-
-#subtitle {
-    margin-left: 30px;
-    display: inline;
+    text-align: left;
 }
 
 #top_line {
-    width: 75%;
-    background-color: var(--black);
+    width: 100%;
+    background-color: var(--lblue);
 }
 
 #nav_text {
-    color: var(--dblue);
+    color: white;
 }
-
-#bot_line {
-    background-color: var(--black);
+#nav_subtext {
+    color: var(--lblue);
 }
 
 .nav {
-    margin-bottom: -13px;
+    background-color: var(--lblue);
 }
 
 #body_carousel {
@@ -57,6 +43,9 @@ html {
     margin: auto;
     padding-top: 3em;
     padding-bottom: 3em;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .carousel_body h3{
@@ -89,6 +78,7 @@ html {
     margin: auto;
     padding-top: 3em;
     padding-bottom: 3em;
+    
 }
 
 #card_header {
