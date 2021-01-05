@@ -19,6 +19,8 @@ html {
 
 #heading_text {
     margin: 4em;
+    margin-top: 5em;
+    margin-bottom: 5em;
     text-align: left;
 }
 
