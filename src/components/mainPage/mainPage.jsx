@@ -9,6 +9,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Image from 'react-bootstrap/Image'
 
 
+
 import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
@@ -20,7 +21,9 @@ function MainPage(props) {
                 <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
-                    <img width="420" height="132" src={logo} />
+                    <a href = "/">
+                    <img alt = "heading_text" width="500" height="150" src={logo}/>
+                    </a>
                 </div>
                 <div>
                     <Nav>
@@ -65,7 +68,7 @@ function MainPage(props) {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                <hr class="body_line" align="left"></hr>
+                <hr class="body_line" align="center"></hr>
                 <div class = 'body_card'>
                     <Card className="text-center">
                         <Card.Header id='card_header'>New Announcement</Card.Header>
@@ -74,22 +77,11 @@ function MainPage(props) {
                             <Card.Text className ='card_text'>
                             Announcement Text
                             </Card.Text>
-                            <Button className ='card_button'>Go to Announcement</Button>
+                            
                         </Card.Body>
                     </Card>
                 </div>
-                <hr class="body_line" align="left"></hr>
-                <div class='body_jumbo'>
-                    <Jumbotron id='jumbo_body'>
-                        <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
-                        <p className='jumbo_text'>
-                        KSEA is the Association of Korean Scientists and Engineers in Korea. We are a non-profit professional organization that started in 1971. Cross the United States, we have more than 6,000 members, 70+ Local 'Young Generation' Chapters in Purdue, UCLA, Georgia Tech, Duke, USC, UC Berkeley, etc. The main activities of the KSEA are UKC, NMSC, SEED, etc. We help students develop their career, and make a network through a variety of academic events.
-                        </p>
-                        <p>
-                            <Button className ='jumbo_button'>Learn more</Button>
-                        </p>
-                    </Jumbotron>
-                </div>
+                <hr class="body_line" align="center"></hr>
 
                 <Button className ='contact'>Contact Us</Button>
 

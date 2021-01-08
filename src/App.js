@@ -8,6 +8,9 @@ import AboutPage from "./components/aboutPage/aboutPage"
 import NewsPage from "./components/newsPage/newsPage"
 import LoginPage from "./components/loginPage/loginPage"
 import WriteNewsPage from "./components/writeNewsPage/writeNewsPage"
+import CalendarPage from "./components/calendarPage/calendarPage"
+import MembersPage from "./components/membersPage/membersPage"
+import EventsPage from "./components/eventsPage/eventsPage"
 import PrivateRoute from "./components/privateRoute"
 
 import React from 'react';
@@ -24,9 +27,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/events" render={() => {window.location.href="htmlPage/events+members/events.html"}} />
-            <Route exact path="/members" render={() => {window.location.href="htmlPage/events+members/members.html"}} />
-            <Route exact path="/calendar" render={() => {window.location.href="htmlPage/events+members/calendar.html"}} />
+            <Route exact path="/events" component={EventsPage} />
+            <Route exact path="/members" component={MembersPage} />
+            <Route exact path="/calendar" component = {CalendarPage} />
             <Route exact path="/news" component={NewsPage} />
             <Route exact path="/login" component={LoginPage} />
             <PrivateRoute exact path="/writeNews" component={WriteNewsPage} />

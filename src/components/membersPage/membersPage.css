@@ -83,7 +83,7 @@ height:98%;
 }
 
 #card_body {
-  background-color: #ffffff80;
+  background-color: transparent;
   padding: 3em;
 }
 
@@ -110,11 +110,10 @@ height:98%;
 
 #jumbo_body {
   padding-top: 7em;
-  padding-bottom: 0%;
+  padding-bottom: 7em;
   padding-left:4em;
   padding-right:4em;
-  background-color: #FFFFFF;
-  margin-bottom: 0%;
+  background-color: transparent;
 }
 
 .jumbo_title{

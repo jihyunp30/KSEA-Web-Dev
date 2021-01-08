@@ -109,12 +109,14 @@ height:98%;
 }
 
 #jumbo_body {
-  padding-top: 7em;
-  padding-bottom: 0%;
+  padding-top: 0em;
+  padding-bottom: 0em;
   padding-left:4em;
   padding-right:4em;
-  background-color: #FFFFFF;
-  margin-bottom: 0%;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .jumbo_title{
@@ -149,4 +151,15 @@ footer {
   border: 0em;
   right: 4em;
   bottom: 0;
+}
+
+.starter-template {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
