@@ -1,3 +1,10 @@
+# KSEA YG Purdue 웹사이트 실행 전 - developer side
+
+리액트가 다운 되어 있는지 확인하여 주세요.
+Router와 Firebase도 다운 받아 주셔야 합니다.
+### 'npm install react-router-dom'
+### 'npm i firsbase'
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

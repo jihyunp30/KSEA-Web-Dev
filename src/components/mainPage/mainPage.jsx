@@ -1,33 +1,46 @@
 import './mainPage.css';
 
+import { useState } from 'react';
+
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Image from 'react-bootstrap/Image'
-
-
+import { Modal, Form, Toast } from 'react-bootstrap';
 
 import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
-import { useState } from 'react';
-import { Modal, Form } from 'react-bootstrap';
+
+import {db} from "../../firebase_setup"
 
 function MainPage(props) {
     const [showContact, setShowContact] = useState(false);
     const [contactName, setContactName] = useState("");
     const [contactEmail, setContactEmail] = useState("");
     const [contactMessage, setContactMessage] = useState("");
+    const [contactConfirm, setContactConfirm] = useState("");
 
+    const handleReset = () => {
+        setContactConfirm("")
+    }
     const handleClose = () => {
         setShowContact(false);
     }
     const handleContact = () => {
         //TODO: handle contact with firebase
         setShowContact(false);
+        db.collection("Contact").add({
+            name: contactName,
+            email: contactEmail,
+            message: contactMessage
+        }).then(function(docRef) {
+            setContactConfirm("Success")
+        }).catch(function(error) {
+            setContactConfirm("Failed")
+        })
+
     }
     const handleShow = () => {
         setShowContact(true);
@@ -101,6 +114,14 @@ function MainPage(props) {
                 </div>
                 <hr class="body_line" align="center"></hr>
 
+                {contactConfirm &&
+                    <Toast className = "confirmation" onClose={handleReset}>
+                        <Toast.Header>
+                        <strong>Thank you for contacting us!</strong>
+                    </Toast.Header>
+                    <Toast.Body>{contactConfirm}</Toast.Body>
+                    </Toast>}
+
                 <Button className ='contact' onClick={handleShow}>Contact Us</Button>
                 <Modal show={showContact} onHide={handleClose}>
                     <Modal.Header closeButton>
@@ -114,11 +135,11 @@ function MainPage(props) {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email" onChange={e => setContactEmail(e.target.value)}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
+                            <Form.Control as="textarea" rows={3} onChange={e => setContactMessage(e.target.value)}/>
                         </Form.Group>
                     </Form>
                     </Modal.Body>

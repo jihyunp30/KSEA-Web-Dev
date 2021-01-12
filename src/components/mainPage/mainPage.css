@@ -152,3 +152,10 @@ footer {
     right: 4em;
     bottom: 0;
 }
+
+.confirmation {
+    position: fixed;
+    border: 0em;
+    right: 4em;
+    top: 1em;
+}
