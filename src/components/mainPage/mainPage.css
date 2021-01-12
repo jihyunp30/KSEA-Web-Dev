@@ -159,3 +159,8 @@ footer {
     right: 4em;
     top: 1em;
 }
+
+.send {
+    background-color: var(--dblue) !important;
+    border: 0em;
+}

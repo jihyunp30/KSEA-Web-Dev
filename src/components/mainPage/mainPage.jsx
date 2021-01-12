@@ -144,7 +144,7 @@ function MainPage(props) {
                     </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={handleContact}>Send</Button>
+                        <Button className ='send' onClick={handleContact}>Send</Button>
                     </Modal.Footer>
                 </Modal>
 
