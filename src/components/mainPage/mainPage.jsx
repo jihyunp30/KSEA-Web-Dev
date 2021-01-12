@@ -13,8 +13,26 @@ import Image from 'react-bootstrap/Image'
 import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
+import { useState } from 'react';
+import { Modal, Form } from 'react-bootstrap';
 
 function MainPage(props) {
+    const [showContact, setShowContact] = useState(false);
+    const [contactName, setContactName] = useState("");
+    const [contactEmail, setContactEmail] = useState("");
+    const [contactMessage, setContactMessage] = useState("");
+
+    const handleClose = () => {
+        setShowContact(false);
+    }
+    const handleContact = () => {
+        //TODO: handle contact with firebase
+        setShowContact(false);
+    }
+    const handleShow = () => {
+        setShowContact(true);
+    }
+
     return(
         <div>
             <div id="heading">
@@ -83,7 +101,31 @@ function MainPage(props) {
                 </div>
                 <hr class="body_line" align="center"></hr>
 
-                <Button className ='contact'>Contact Us</Button>
+                <Button className ='contact' onClick={handleShow}>Contact Us</Button>
+                <Modal show={showContact} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Contact Us</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control placeholder="Name" onChange={e => setContactName(e.target.value)}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Message</Form.Label>
+                            <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                    </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={handleContact}>Send</Button>
+                    </Modal.Footer>
+                </Modal>
 
                 <footer>
                     KSEA YG Purdue
