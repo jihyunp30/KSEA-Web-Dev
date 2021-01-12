@@ -4,6 +4,7 @@
 Router와 Firebase도 다운 받아 주셔야 합니다.
 ### 'npm install react-router-dom'
 ### 'npm i firsbase'
+실행이 안되시거나 blank 페이지가 나온다면 .env.local 파일이 있는지 확인하여 주세요.
 
 # Getting Started with Create React App
 
