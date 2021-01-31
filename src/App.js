@@ -8,6 +8,8 @@ import AboutPage from "./components/aboutPage/aboutPage"
 import CalendarPage from "./components/calendarPage/calendarPage"
 import MembersPage from "./components/membersPage/membersPage"
 import EventsPage from "./components/eventsPage/eventsPage"
+import ResearchPage from "./components/researchPage/researchPage"
+import AnnouncementPage from "./components/announcementPage/announcementPage"
 import SubPage from "./components/subPage"
 
 import React from 'react';
@@ -23,7 +25,9 @@ function App() {
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/members" component={MembersPage} />
-            <Route exact path="/calendar" component = {CalendarPage} />
+            <Route exact path="/calendar" component ={CalendarPage} />
+            <Route exact path="/research" component ={ResearchPage} />
+            <Route exact path="/announcement" component ={AnnouncementPage} />
           </Switch>
         </div>
       </Router>

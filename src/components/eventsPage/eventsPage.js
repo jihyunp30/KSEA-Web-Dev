@@ -33,9 +33,9 @@ function EventsPage(props) {
               <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
-            <Nav.Link id='nav_text'>News</Nav.Link>
+            <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link> 
             <Nav.Link id='nav_text'>Photo</Nav.Link>
-            <Nav.Link id='nav_text'>Research</Nav.Link>
+            <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
           </Nav>
         </div>
       </div>
