@@ -1,31 +1,23 @@
-import './writeNewsPage.css';
+import './announcementPage.css';
 
 import firebase, {db} from "../../firebase_setup"
 
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
-import { Alert, Card } from 'react-bootstrap';
+
 
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext'
 import { useHistory } from 'react-router-dom';
 
-function WriteNewsPage(props) {
 
-    const [error, setError] = useState("")
-    const { currentUser, logout } = useAuth()
+function AnnouncementPage(props) {
+
     const history = useHistory()
 
-    async function handleLogout() {
-        setError('')
-        try {
-            await logout()
-            history.push('/login')
-        } catch {
-            setError('Failed to log out')
-        }
+    const routeChange=()=> {
+        history.push('/posting');
     }
 
     return(
@@ -44,7 +36,7 @@ function WriteNewsPage(props) {
                         <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
-                        <Nav.Link id='nav_text' href="/news">News</Nav.Link>
+                        <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text'>Research</Nav.Link>
                     </Nav>
@@ -52,15 +44,7 @@ function WriteNewsPage(props) {
             </div>
             <div id='body'>
                 <div>
-                    <Card>
-                        <Card.Body>
-                            <h2>Write News</h2>
-                            {error && <Alert variant="danger">{error}</Alert>}
-                            <strog>Email:</strog> {currentUser.email}
-                            
-                        </Card.Body>
-                    </Card>
-                    <Button variant="link" onClick = {handleLogout}>Log Out</Button>
+                    <Button onClick={routeChange}>Write</Button>
                 </div>
 
                 <Button className ='contact'>Contact Us</Button>
@@ -76,4 +60,4 @@ function WriteNewsPage(props) {
     )
 }
 
-export default WriteNewsPage
+export default AnnouncementPage

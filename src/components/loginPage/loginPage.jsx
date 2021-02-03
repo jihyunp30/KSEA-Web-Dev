@@ -29,7 +29,7 @@ function LoginPage(props) {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/writeNews")
+            history.push("/posting")
         } catch {
             setError("Failed to log in")
         }
@@ -58,7 +58,7 @@ function LoginPage(props) {
                         <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
-                        <Nav.Link id='nav_text' href="/news">News</Nav.Link>
+                        <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text'>Research</Nav.Link>
                     </Nav>

@@ -13,7 +13,7 @@ import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 
-import {db} from "../../firebase_setup"
+import firebase, {db} from "../../firebase_setup"
 
 function MainPage(props) {
     const [showContact, setShowContact] = useState(false);
@@ -29,12 +29,11 @@ function MainPage(props) {
         setShowContact(false);
     }
     const handleContact = () => {
-        //TODO: handle contact with firebase
         setShowContact(false);
         db.collection("Contact").add({
             name: contactName,
             email: contactEmail,
-            message: contactMessage
+            message: contactMessage,
         }).then(function(docRef) {
             setContactConfirm("Success")
         }).catch(function(error) {
@@ -64,7 +63,7 @@ function MainPage(props) {
                         <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
-                        <Nav.Link id='nav_text' href="/news">News</Nav.Link>
+                        <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text'>Research</Nav.Link>
                     </Nav>
@@ -128,20 +127,20 @@ function MainPage(props) {
                         <Modal.Title>Contact Us</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control placeholder="Name" onChange={e => setContactName(e.target.value)}/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" onChange={e => setContactEmail(e.target.value)}/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows={3} onChange={e => setContactMessage(e.target.value)}/>
-                        </Form.Group>
-                    </Form>
+                        <Form>
+                            <Form.Group>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control placeholder="Name" onChange={e => setContactName(e.target.value)}/>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" onChange={e => setContactEmail(e.target.value)}/>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>Message</Form.Label>
+                                <Form.Control as="textarea" rows={3} onChange={e => setContactMessage(e.target.value)}/>
+                            </Form.Group>
+                        </Form>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button className ='send' onClick={handleContact}>Send</Button>
