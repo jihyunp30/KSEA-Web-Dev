@@ -11,6 +11,7 @@ import PostingPage from "./components/postingPage/postingPage"
 import CalendarPage from "./components/calendarPage/calendarPage"
 import MembersPage from "./components/membersPage/membersPage"
 import EventsPage from "./components/eventsPage/eventsPage"
+import ResearchPage from "./components/researchPage/researchPage"
 import PrivateRoute from "./components/privateRoute"
 
 import React from 'react';
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/members" component={MembersPage} />
             <Route exact path="/calendar" component = {CalendarPage} />
             <Route exact path="/announcement" component={AnnouncementPage} />
+            <Route exact path="/research" component={ResearchPage} />
             <Route exact path="/login" component={LoginPage} />
             <PrivateRoute exact path="/posting" component={PostingPage} />
           </Switch>
