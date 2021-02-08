@@ -48,11 +48,10 @@ function MainPage(props) {
     return(
         <div>
             <div id="heading">
-                <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
                     <a href = "/">
-                    <img alt = "heading_text" width="500" height="150" src={logo}/>
+                    <img alt = "heading_text" width="400" height="120" src={logo}/>
                     </a>
                 </div>
                 <div>

@@ -22,20 +22,21 @@ html {
     text-align: left;
 }
 
-#top_line {
-    width: 100%;
-    background-color: var(--lblue);
-}
 
 #nav_text {
     color: white;
 }
+
 #nav_subtext {
     color: var(--lblue);
 }
 
 .nav {
     background-color: var(--lblue);
+    width: 70%;
+    float: right;
+    margin-top: -110px; 
+    position: relative;
 }
 
 #body_carousel {
@@ -119,11 +120,6 @@ html {
     background-color: #FFFFFF;
 }
 
-.jumbo_title{
-    color: var(--black);
-    font-size: 50px;
-    padding-bottom: 10px;
-}
 
 .jumbo_text{
     color: var(--black);

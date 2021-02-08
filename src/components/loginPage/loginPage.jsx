@@ -45,10 +45,9 @@ function LoginPage(props) {
     return(
         <div>
             <div id="heading">
-                <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
-                    <img width="420" height="132" src={logo} />
+                    <img width="400" height="120" src={logo} />
                 </div>
                 <div>
                     <Nav>
@@ -88,9 +87,11 @@ function LoginPage(props) {
                 <Button className ='contact'>Contact Us</Button>
 
                 <footer>
-                    KSEA YG Purdue
-                    <br></br>
-                    In 2020 by web dev team
+                  <br></br>
+                  <hr className="body_line" align="center"></hr>
+                  KSEA YG Purdue
+                  <br></br>
+                  In 2020 by web dev team
                 </footer>
             </div>
             

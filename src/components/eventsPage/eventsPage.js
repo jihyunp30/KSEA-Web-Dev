@@ -18,11 +18,10 @@ function EventsPage(props) {
   return (
     <div>
       <div id="heading">
-        <hr id="top_line"></hr>
 
         <div id='heading_text'>
           <a href="/">
-            <img alt="heading_text" width="500" height="150" src={logo} />
+            <img alt="heading_text" width="400" height="120" src={logo} />
           </a>
         </div>
         <div>
@@ -39,13 +38,22 @@ function EventsPage(props) {
           </Nav>
         </div>
       </div>
+      
       <div id='body'>
-        <hr className="body_line" align="center"></hr>
 
-        <div className="starter-template">
-          <h1>What do we do?</h1>
-          <p className="lead">KSEA YG PURDUE는 퍼듀의 한인 이공계 학생들의 발전을 위한 여러 이벤트들을 주최하고있습니다.</p>
-        </div>
+        <Jumbotron id='jumbo_body'>
+            
+            <div class = "wrapper">
+              <div class = 'jumbo_title'>
+                <h1>Who are we?</h1>
+              </div>
+            </div>
+
+            <p className='jumbo_text'>
+              KSEA YG PURDUE는 퍼듀의 한인 이공계 학생들의 발전을 위한 여러 이벤트들을 주최하고있습니다.
+            </p>
+
+            <br></br><br></br>
 
         <hr className="featurette-divider" />
 
@@ -95,15 +103,19 @@ function EventsPage(props) {
           </div>
         </div>
 
-        <hr className="body_line" align="center"></hr>
+        </Jumbotron>
+
+
 
         <Button className='contact'>Contact Us</Button>
 
         <footer>
+          <br></br>
+          <hr className="body_line" align="center"></hr>
           KSEA YG Purdue
-                <br></br>
-                In 2020 by web dev team
-            </footer>
+          <br></br>
+          In 2020 by web dev team
+        </footer>
       </div>
 
     </div>

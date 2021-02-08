@@ -22,10 +22,6 @@ height:98%;
   text-align: left;
 }
 
-#top_line {
-  width: 100%;
-  background-color: var(--lblue);
-}
 
 #nav_text {
   color: white;
@@ -35,7 +31,11 @@ height:98%;
 }
 
 .nav {
-  background-color: var(--lblue);
+    background-color: var(--lblue);
+    width: 70%;
+    float: right;
+    margin-top: -110px; 
+    position: relative;
 }
 
 #body_carousel {
@@ -67,7 +67,7 @@ height:98%;
 
 .body_line {
   background-color: var(--white);
-  width: 60%
+  width: 75%
 }
 
 .body_card {

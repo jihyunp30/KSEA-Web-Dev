@@ -16,11 +16,10 @@ function MembersPage(props) {
   return (
     <div>
       <div id="heading">
-        <hr id="top_line"></hr>
 
         <div id='heading_text'>
           <a href="/">
-            <img alt="heading_text" width="500" height="150" src={logo} padding = "0" />
+            <img alt="heading_text" width="400" height="120" src={logo} padding = "0" />
           </a>
         </div>
         <div>
@@ -37,16 +36,24 @@ function MembersPage(props) {
           </Nav>
         </div>
       </div>
+
       <div id='body'>
-        <hr className="body_line" align="center"></hr>
 
-
-        <div className='body_jumbo'>
           <Jumbotron id='jumbo_body'>
-            <h1 className='jumbo_title'>Who are we?</h1>
+            
+            <div class = "wrapper">
+              <div class = 'jumbo_title'>
+                <h1>Who are we?</h1>
+              </div>
+            </div>
+
             <p className='jumbo_text'>
               KSEA YG PURDUE는 퍼듀의 한인 이공계 학생들의 발전을 위해 힘쓰는 동아리입니다.
-              </p>
+            </p>
+
+            <br></br>
+            <br></br>
+
             <div className="row">
                 <div className="col-lg-4">
                   <svg className="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +110,7 @@ function MembersPage(props) {
                     <rect width="100%" height="100%" fill="#ebe8e6" /><text x="50%" y="50%" fill="#82918b"
                       dy=".3em">140x140</text>
                   </svg>
-                  <h4>조성완 <span className="text-muted"> | Event Manager</span></h4>
+                  <h4>조성완 <span className="text-muted"> | Event Team Lead</span></h4>
                   <p>Material Science Engineering</p>
                   <p>jo46@purdue.edu</p>
                 </div>
@@ -115,23 +122,26 @@ function MembersPage(props) {
                     <rect width="100%" height="100%" fill="#ebe8e6" /><text x="50%" y="50%" fill="#82918b"
                       dy=".3em">140x140</text>
                   </svg>
-                  <h4>이지원 <span className="text-muted"> | Ad Manager</span></h4>
+                  <h4>이지원 <span className="text-muted"> | PR Team Lead</span></h4>
                   <p>UX Design</p>
                   <p>lee3400@purdue.edu</p>
                 </div>
 
+                <br></br><br></br>
+
               </div>
           </Jumbotron>
-        </div>
-        <hr className="body_line" align="center"></hr>
 
         <Button className='contact'>Contact Us</Button>
 
         <footer>
+          <br></br>
+          <hr className="body_line" align="center"></hr>
           KSEA YG Purdue
-                <br></br>
-                In 2020 by web dev team
-            </footer>
+          <br></br>
+          In 2020 by web dev team
+        </footer>
+
       </div>
 
     </div>

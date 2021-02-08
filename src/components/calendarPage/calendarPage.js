@@ -18,11 +18,10 @@ function CalendarPage(props) {
     return (
         <div>
             <div id="heading">
-                <hr id="top_line"></hr>
 
                 <div id='heading_text'>
                     <a href="/">
-                        <img alt="heading_text" width="500" height="150" src={logo} />
+                        <img alt="heading_text" width="400" height="120" src={logo} />
                     </a>
                 </div>
                 <div>
@@ -40,12 +39,10 @@ function CalendarPage(props) {
                 </div>
             </div>
             <div id='body'>
-                <hr class="body_line" align="center"></hr>
-
-
+                
                 <div class='body_jumbo'>
                     <Jumbotron id='jumbo_body'>
-                        <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
+                        <h1 className='jumbo_title'></h1>
 
                         {/*Google API*/}
 
@@ -56,10 +53,12 @@ function CalendarPage(props) {
                 <Button className='contact'>Contact Us</Button>
 
                 <footer>
-                    KSEA YG Purdue
-                <br></br>
-                In 2020 by web dev team
-            </footer>
+                  <br></br>
+                  <hr className="body_line" align="center"></hr>
+                  KSEA YG Purdue
+                  <br></br>
+                  In 2020 by web dev team
+                </footer>
             </div>
 
         </div>
