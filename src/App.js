@@ -11,6 +11,7 @@ import PostingPage from "./components/postingPage/postingPage"
 import CalendarPage from "./components/calendarPage/calendarPage"
 import MembersPage from "./components/membersPage/membersPage"
 import EventsPage from "./components/eventsPage/eventsPage"
+import IndiPostPage from "./components/indiPostPage/indiPostPage"
 import ResearchPage from "./components/researchPage/researchPage"
 import PrivateRoute from "./components/privateRoute"
 
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/calendar" component = {CalendarPage} />
             <Route exact path="/announcement" component={AnnouncementPage} />
             <Route exact path="/research" component={ResearchPage} />
+            <Route exact path="/post/:postID" component={IndiPostPage} />
             <Route exact path="/login" component={LoginPage} />
             <PrivateRoute exact path="/posting" component={PostingPage} />
           </Switch>
