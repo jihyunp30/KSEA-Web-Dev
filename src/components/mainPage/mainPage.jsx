@@ -66,6 +66,7 @@ function MainPage(props) {
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
+                        <Nav.Link id='nav_text' href="/postPage">Posts</Nav.Link>
                     </Nav>
                 </div>
             </div>
