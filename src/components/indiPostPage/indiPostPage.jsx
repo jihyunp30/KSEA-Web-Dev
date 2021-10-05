@@ -25,14 +25,15 @@ function IndiPostPage(props) {
         function getTitle(documentSnapshot) {
             return documentSnapshot.get('title');
         }
-          
-        /* db.collection('Users')
-        .doc(currentUser.uid)
+        
+        db.collection('Announcement')
+        .doc(postID)
         .get()
-        .then(documentSnapshot => getNFollowers(documentSnapshot))
-        .then(nFollowers => {
-            setFollowers(nFollowers)
-        }); */
+        .then(documentSnapshot => getTitle(documentSnapshot))
+        .then(title => {
+            setTitle(title)
+        });
+
 
     }
 
@@ -60,7 +61,10 @@ function IndiPostPage(props) {
             </div>
             <div id='body'>
                 <div>
-                    <h2>{postID}</h2>
+                    <Button onClick={getPost}>Get Post</Button>
+                </div>
+                <div>
+                    <h2>{title}</h2>
                 </div>
 
                 <Button className ='contact'>Contact Us</Button>
