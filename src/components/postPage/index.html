@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get URL Parameters</title>
+        <meta charset="UTF-8">
+        <script>
+            function getParameter(parameterName) {
+                let parameters = new URLSearchParams(window.location.search);
+                return parameters.get(parameterName);
+            }
+        </script>
+    </head>
+</html>
+
+function GetItem(postID) {
+    const{title} = '';
+    useEffect(
+        () =>
+            onSnapshot(doc(db, "Announcement", postID),(doc) => {
+                    doc.data();
+            })
+    )
+    if (doc.id === postID) {
+        title = doc.title;
+    }
+    return title;
+    }

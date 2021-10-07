@@ -12,13 +12,27 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-
 function PostPage(props) {
 
+    const [title, setTitle] = useState("")
     const { postID } = useParams();
+    
+    const getPost = () => {
+
+        function getTitle(documentSnapshot) {
+            return documentSnapshot.get('title');
+        }
+        
+        db.collection('Announcement') // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
+        .doc(postID)
+        .get()
+        .then(documentSnapshot => getTitle(documentSnapshot))
+        .then(title => {
+            setTitle(title)
+        });
 
 
-
+    }
 
 
     return(
@@ -46,7 +60,8 @@ function PostPage(props) {
             </div>
             <div id='body'>
                 <div>
-                    <h2>{postID}</h2>
+                    <Button onClick = {getPost}>Get Title</Button>
+                    <h2>{title}</h2>
                 </div>
 
                 <Button className ='contact'>Contact Us</Button>
