@@ -15,15 +15,18 @@ import { useParams } from 'react-router-dom';
 function PostPage(props) {
 
     const [title, setTitle] = useState("")
+    const { collection } = useParams();
     const { postID } = useParams();
     
+
     const getPost = () => {
+        console.log(collection)
 
         function getTitle(documentSnapshot) {
             return documentSnapshot.get('title');
         }
         
-        db.collection('Announcement') // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
+        db.collection(collection) // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
         .doc(postID)
         .get()
         .then(documentSnapshot => getTitle(documentSnapshot))
@@ -31,13 +34,16 @@ function PostPage(props) {
             setTitle(title)
         });
 
-
     }
+
+
 
 
     return(
         <div>
+
             <div id="heading">
+                
                 <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
@@ -54,16 +60,14 @@ function PostPage(props) {
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
                         <Nav.Link id='nav_text'>Research</Nav.Link>
-                        <Nav.Link id='nav_text'>Posts</Nav.Link>
                     </Nav>
                 </div>
             </div>
             <div id='body'>
-                <div>
-                    <Button onClick = {getPost}>Get Title</Button>
-                    <h2>{title}</h2>
-                </div>
-
+                    <div>
+                        <Button onClick = {getPost}>Title Button</Button>
+                        <h1>{title}</h1>
+                    </div>
                 <Button className ='contact'>Contact Us</Button>
 
                 <footer>
@@ -72,7 +76,7 @@ function PostPage(props) {
                     In 2020 by web dev team
                 </footer>
             </div>
-            
+
         </div>
     )
 }

@@ -26,3 +26,9 @@ function GetItem(postID) {
     }
     return title;
     }
+
+
+    <Button onClick = {getPost}>Get Title</Button>
+    .then(title => {
+        setTitle(title)
+    })

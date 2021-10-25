@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/research" component={ResearchPage} />
             <Route exact path="/post/:postID" component={IndiPostPage} />
             <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/postPage/:postID" component={PostPage} />
+            <Route exact path="/:collection/:postID" component={PostPage} />
             <PrivateRoute exact path="/posting" component={PostingPage} />
           </Switch>
         </div>
