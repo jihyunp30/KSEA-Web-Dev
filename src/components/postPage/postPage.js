@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
 
 function PostPage(props) {
@@ -17,16 +18,20 @@ function PostPage(props) {
     const [title, setTitle] = useState("")
     const { collection } = useParams();
     const { postID } = useParams();
-    
 
-    const getPost = () => {
-        console.log(collection)
+    function captializeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+
+    useEffect(() =>  {
+        
 
         function getTitle(documentSnapshot) {
             return documentSnapshot.get('title');
         }
         
-        db.collection(collection) // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
+        db.collection(captializeFirstLetter(collection)) // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
         .doc(postID)
         .get()
         .then(documentSnapshot => getTitle(documentSnapshot))
@@ -34,7 +39,9 @@ function PostPage(props) {
             setTitle(title)
         });
 
-    }
+    });
+        
+
 
 
 
@@ -65,7 +72,6 @@ function PostPage(props) {
             </div>
             <div id='body'>
                     <div>
-                        <Button onClick = {getPost}>Title Button</Button>
                         <h1>{title}</h1>
                     </div>
                 <Button className ='contact'>Contact Us</Button>
