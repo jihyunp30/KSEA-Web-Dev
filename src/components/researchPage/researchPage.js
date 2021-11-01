@@ -19,22 +19,33 @@ import './pagination.css';
 
 import ReactPaginate from "react-paginate";
 
+import researchpicture1 from '../../assets/engineering.jpg'
+import researchpicture2 from '../../assets/human-factors.jpg'
+import researchpicture3 from '../../assets/manufacturing.jpg'
+import researchpicture4 from '../../assets/operations-research.jpg'
+import researchpicture5 from '../../assets/production-systems.jpg'
+import researchpicture6 from '../../assets/polytec.jpg'
 
 function ResearchPage(props) {
 
 const [posts, setPosts] = useState([]);
 
+
+
 const fetchposts=async()=>{
   db
   .collection('Research')
-  .orderBy('time','asc')
   .get()
-  .then((collections) => {
-  const researches = collections.docs.map((doc) => doc.data());
-  
-  setPosts(researches);
+  .then((snapshot) => {
+    const researches = snapshot.docs.map((doc) => doc.data());
+    setPosts(researches);
+  // const researches = snapshot.docs.map((doc) => doc.data());
+  // setPosts(researches);
   });
 }
+
+
+
 useEffect(() => {
   fetchposts();
 }, [])
@@ -43,7 +54,7 @@ useEffect(() => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const postsperpage = 10;
+  const postsperpage = 3;
   const pagesVisited = pageNumber * postsperpage;
 
 
@@ -52,8 +63,11 @@ useEffect(() => {
     .map((post) => {
       return (
         <div className="post">
-          <h3>{post.id}</h3>
-          <h3>{post.text}</h3>
+          <a href = {"/research/"}>
+          <h3>{post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)} </h3>
+          
+          </a>
+
 
         </div>
       );
@@ -108,51 +122,62 @@ useEffect(() => {
 
             <div className="box">
               
-              <a href="https://engineering.purdue.edu/ME/Research" className="image fit"><img src="image/mechanicalengineering.jpg" width="400" height="100" alt="Engineering" /></a>
+              <a href="https://engineering.purdue.edu/ME/Research" className="image fit"><img src={researchpicture1} width="400" height="100" alt="Engineering" />
               <div className="inner">
                 <h3>Mechanical Engineering Research</h3>
               </div>
+              </a>
             </div>
 
             <div className="box">
               
-              <a href="https://www.cs.purdue.edu/research/" className="image fit"><img src="images/computerscience.jpg" width="400" height="100" alt="Computer Science"/></a>
+              <a href="https://www.cs.purdue.edu/research/" className="image fit"><img src={researchpicture2} width="400" height="100" alt="Computer Science"/>
               <div className="inner">
                 <h3>Computer Science Research</h3>
               </div>
+              </a>
+
             </div>
 
             <div className="box">
               
-              <a href="https://engineering.purdue.edu/IE/research" className="image fit"><img src="images/industrialengineering.jpg" width="400" height="100" alt="EngineeringIe"/></a>
+              <a href="https://engineering.purdue.edu/IE/research" className="image fit"><img src={researchpicture3} width="400" height="100" alt="EngineeringIe"/>
               <div className="inner" >
                 <h3>Industrial Engineeing Research</h3>
               </div>
+              </a>
+
             </div>
 
             <div className="box">
               
-              <a href="https://engineering.purdue.edu/ChE/research" className="image fit"><img src="images/industrialengineering.jpg" width="400" height="100" alt="EngineeringChe" /></a>
+              <a href="https://engineering.purdue.edu/ChE/research" className="image fit"><img src={researchpicture4} width="400" height="100" alt="EngineeringChe" />
               <div className="inner" >
                 <h3>Chemical Engineeing Research</h3>
               </div>
+              </a>
+
             </div>
 
             <div className="box">
               
-              <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit"><img src="images/industrialengineering.jpg" width="400" height="100" alt="Polytech"/></a>
+              <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit"><img src={researchpicture5} width="400" height="100" alt="Polytech"/>
               <div className="inner">
                 <h3>Polytechnic Institute Research</h3>
               </div>
+              </a>
+
             </div>
 
             <div className="box">
               
-                <a href="https://www.pharmacy.purdue.edu/research" className="image fit"><img src="images/industrialengineering.jpg" width="400" height="100" alt="Pharmacy" /></a>
+                <a href="https://www.pharmacy.purdue.edu/research" className="image fit"><img src={researchpicture6} width="400" height="100" alt="Pharmacy" />
                 <div className="inner">
                   <h3>Pharmacy Research</h3>
-                  </div>
                 </div>
+                </a>
+
+            </div>  
           </div>
 
           <div >
