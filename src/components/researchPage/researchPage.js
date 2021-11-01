@@ -64,7 +64,7 @@ useEffect(() => {
       return (
         <div className="post">
           <a href = {"/research/"}>
-          <h3>{post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)} </h3>
+          <h3>{post.DocumentId()}{post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)} </h3>
           
           </a>
 
