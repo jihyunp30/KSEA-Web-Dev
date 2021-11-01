@@ -14,10 +14,13 @@ import EventsPage from "./components/eventsPage/eventsPage"
 import IndiPostPage from "./components/indiPostPage/indiPostPage"
 import ResearchPage from "./components/researchPage/researchPage"
 import PrivateRoute from "./components/privateRoute"
+import PostPage from './components/postPage/postPage'
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
+
+
 
 function App() {
   return (
@@ -36,6 +39,7 @@ function App() {
             <Route exact path="/research" component={ResearchPage} />
             <Route exact path="/post/:postID" component={IndiPostPage} />
             <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/:collection/:postID" component={PostPage} />
             <PrivateRoute exact path="/posting" component={PostingPage} />
           </Switch>
         </div>
