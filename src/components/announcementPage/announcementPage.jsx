@@ -32,12 +32,21 @@ function AnnouncementPage(props) {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
+
+
     useEffect(() => {
         const fetchPosts = async () => {
-            setLoading(true);
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-            setPosts(res.data);
+            db
+            .collection('Announcement')
+            .orderBy('time','asc')
+            .get()
+            .then((collections) => {
+                setLoading(true);
+                const res = collections.docs.map((doc) => doc.data());
+              
+            setPosts(res);
             setLoading(false);
+            });
         }
 
         fetchPosts();
