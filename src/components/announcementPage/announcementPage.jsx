@@ -42,10 +42,13 @@ function AnnouncementPage(props) {
             .get()
             .then((collections) => {
                 setLoading(true);
-                const res = collections.docs.map((doc) => doc.data());
-              
-            setPosts(res);
-            setLoading(false);
+                const res = collections.docs.map((doc) => {
+                    const test = doc.data();
+                    test.id = doc.id
+                    return test;
+                });
+                setPosts(res);
+                setLoading(false);
             });
         }
 
@@ -80,7 +83,7 @@ function AnnouncementPage(props) {
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
-                        <Nav.Link id='nav_text'>Research</Nav.Link>
+                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
             </div>

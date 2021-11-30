@@ -9,7 +9,9 @@ const Posts = ({ posts, loading }) => {
     <ul className='list-group mb-4'>
       {posts.map(post => (
         <li key={post.id} className='list-group-item'>
-          {post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
+          <a href={"/announcement/" + post.id}>
+            {post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
+          </a>
         </li>
       ))}
     </ul>
