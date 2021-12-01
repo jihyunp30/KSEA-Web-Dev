@@ -15,7 +15,6 @@ import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import firebase, {db}  from "../../firebase_setup"
 import { useEffect, useState } from 'react';
 
-import './pagination.css';
 
 import ReactPaginate from "react-paginate";
 
@@ -66,16 +65,17 @@ useEffect(() => {
     .slice(pagesVisited, pagesVisited + postsperpage)
     .map((post) => {
       return (
-        <div class="row">
-              <div class="col-md-4">
-                <a href = {"/research/" + post.id  }>
-                  <h3>{post.title}  </h3>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <h5>{new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}</h5>
-              </div>
-            </div>
+        <tr>
+        <td>
+          <a href = {"/research/" + post.id  }>
+                  {post.title}  
+          </a>
+        </td>
+        <td>
+          {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
+        </td>
+      </tr>
+        
           
 
 
@@ -123,14 +123,14 @@ useEffect(() => {
 
       <div className='body_jumbo'>
         <Jumbotron id='jumbo_body'>
-          <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
+          <h1 className='jumbo_title'>Research</h1>
 
 
           <div class="card-columns">
             <div class="card mt-4" >
               <img class="card-img-top" src={researchpicture1} alt="Engineering"/>
               <div class="card-body text-center">
-                <h4 class="card-title">Mechanical Engineering Research</h4>
+                <h4 class="card-title">Mechanical Engineering</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -141,7 +141,7 @@ useEffect(() => {
             <div class="card mt-4">
               <img class="card-img-top" src={researchpicture1} alt="Computer Science"/>
               <div class="card-body text-center">
-                <h4 class="card-title">Computer Science Research</h4>
+                <h4 class="card-title">Computer Science</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -152,7 +152,7 @@ useEffect(() => {
             <div class="card mt-4 ">
               <img src={researchpicture1} class="card-img-top" alt="EngineeringIe"/>
               <div class="card-body text-center">
-                <h4 class="card-title">Industrial Engineeing Research</h4>
+                <h4 class="card-title">Industrial Engineeing</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -163,7 +163,7 @@ useEffect(() => {
             <div class="card mt-4 ">
               <img src={researchpicture1} class="card-img-top" alt="EngineeringChe" />
               <div class="card-body text-center">
-                <h4 class="card-title">Chemical Engineeing Research</h4>
+                <h4 class="card-title">Chemical Engineeing</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -174,7 +174,7 @@ useEffect(() => {
             <div class="card mt-4">
               <img src={researchpicture1}  class="card-img-top" alt="Polytech"/>
               <div class="card-body text-center">
-                <h4 class="card-title">Polytechnic Institute Research</h4>
+                <h4 class="card-title">Polytechnic Institute</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -185,7 +185,7 @@ useEffect(() => {
             <div class="card mt-4">
               <img src={researchpicture1} class="card-img-top" alt="Pharmacy" />
               <div class="card-body text-center">
-                <h4 class="card-title">Pharmacy Research</h4>
+                <h4 class="card-title">Pharmacy</h4>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </p>
@@ -198,30 +198,42 @@ useEffect(() => {
 
 
           <div >
+          
+          
+          <div class="container w-50">
+            <table class="table table-striped">
+            <thead>
+            <tr >
+              <th >Title</th>
+              <th>Date</th>
+            </tr>
+            {displayposts}
 
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h5>Title</h5>
-              </div>
-              <div class="col-md-4">
-                <h5>Date</h5>
-              </div>
-            </div>
-        
-          {displayposts}
-          </div>  
+            </thead>
+            <tbody>
+          
+     
+    </tbody>
+  </table>
+</div>
+         
             
              <ReactPaginate
               previousLabel={"Prev"}
               nextLabel={"Next"}
               pageCount={pageCount}
               onPageChange={changePage}
-              containerClassName={"paginationBttns"}
-              previousLinkClassName={"previousBttn"}
-              nextLinkClassName={"nextBttn"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
+              breakClassName="page-item"
+              breakLabel={<a className="page-link">...</a>}
+              pageClassName="page-item"
+              previousClassName="page-item"
+              nextClassName="page-item"
+              pageLinkClassName="page-link"
+              previousLinkClassName="page-link"
+              nextLinkClassName="page-link"
+              activeClassName="active"
+              containerClassName="pagination  justify-content-center"
+
             />
           </div>
 
