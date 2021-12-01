@@ -37,7 +37,11 @@ const fetchposts=async()=>{
   .collection('Research')
   .get()
   .then((snapshot) => {
-    const researches = snapshot.docs.map((doc) => doc.data());
+    const researches = snapshot.docs.map((doc) => {
+      const test = doc.data();
+      test.id = doc.id
+      return test;
+    });
     setPosts(researches);
   // const researches = snapshot.docs.map((doc) => doc.data());
   // setPosts(researches);
@@ -64,7 +68,7 @@ useEffect(() => {
       return (
         <div class="row">
               <div class="col-md-4">
-                <a href = {"/research/"  }>
+                <a href = {"/research/" + post.id  }>
                   <h3>{post.title}  </h3>
                 </a>
               </div>
@@ -87,7 +91,6 @@ useEffect(() => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-
 
   return (
 
