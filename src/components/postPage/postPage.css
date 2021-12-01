@@ -1,0 +1,154 @@
+:root {
+    --black: #2d2d2d;
+    --white: #ebe8e6;
+    --gold: #d0a670;
+    --lblue: #aebab4;
+    --dblue: #82918b;
+    --rlblue: #2acbe7;
+  }
+  
+  html {
+  margin:10px auto;
+  width:99%;
+  height:98%;
+  }
+  
+  #heading {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  #heading_text {
+    margin: 4em;
+    text-align: left;
+  }
+  
+  #top_line {
+    width: 100%;
+    background-color: var(--lblue);
+  }
+  
+  #nav_text {
+    color: white;
+  }
+  #nav_subtext {
+    color: var(--rlblue);
+  }
+  
+  .nav {
+    background-color: var(--lblue);
+  }
+  
+  #body_carousel {
+    width: 75%;
+    margin: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  
+  .carousel_body h3{
+    display: inline-block;
+    color: var(--dblue);
+    background-color: var(--white);
+    padding: .2em .5em;
+  }
+  
+  .carousel_body p{
+    display: inline-block;
+    color: var(--lblue);
+    background-color: var(--white);
+    padding: .2em .5em;
+  }
+  
+  #body {
+    height: 100%;
+    background: linear-gradient(15deg, var(--white) 50%, white 0%);
+  
+  }
+  
+  .body_line {
+    background-color: var(--white);
+    width: 60%
+  }
+  
+  .body_card {
+    width: 75%;
+    margin: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  
+  #card_header {
+    background-color: var(--lblue);
+    color: var(--black);
+  }
+  
+  #card_body {
+    background-color: #ffffff80;
+    padding: 3em;
+  }
+  
+  .card_button {
+    background-color: var(--dblue) !important;
+    border: 0em;
+  }
+  
+  .card_title {
+    color: var(--black);
+    font-size: 50px;
+  }
+  
+  .card_text{
+    color: var(--black);
+    font-size: 25px;
+  }
+  
+  .body_jumbo {
+    width: 90%;
+    margin: auto;
+    padding: 0%;
+  }
+  
+  #jumbo_body {
+    padding-top: 7em;
+    padding-bottom: 0%;
+    padding-left:4em;
+    padding-right:4em;
+    background-color: #FFFFFF;
+    margin-bottom: 0%;
+  }
+  
+  .jumbo_title{
+    color: var(--black);
+    font-size: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .jumbo_text{
+    color: var(--black);
+    font-size: 18px;
+    text-indent: 1em;
+  }
+  
+  .jumbo_button {
+    background-color: var(--gold) !important;
+    border: 0em;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  
+  footer {
+    width: 100%;
+    padding-bottom: 2em;
+    text-align: center;
+    color: var(--black);
+  }
+  
+  .contact {
+    position: fixed;
+    background-color: var(--lblue) !important;
+    border: 0em;
+    right: 4em;
+    bottom: 0;
+  }
+  
