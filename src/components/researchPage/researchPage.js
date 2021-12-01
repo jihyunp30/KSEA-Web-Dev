@@ -62,14 +62,20 @@ useEffect(() => {
     .slice(pagesVisited, pagesVisited + postsperpage)
     .map((post) => {
       return (
-        <div className="post">
-          <a href = {"/research/"}>
-          <h3>{post.DocumentId()}{post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)} </h3>
+        <div class="row">
+              <div class="col-md-4">
+                <a href = {"/research/"  }>
+                  <h3>{post.title}  </h3>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h5>{new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}</h5>
+              </div>
+            </div>
           
-          </a>
 
 
-        </div>
+        
       );
     });
 
@@ -116,72 +122,93 @@ useEffect(() => {
         <Jumbotron id='jumbo_body'>
           <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
 
-          
-        
-          <div className="thumbnails">
-
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/ME/Research" className="image fit"><img src={researchpicture1} width="400" height="100" alt="Engineering" />
-              <div className="inner">
-                <h3>Mechanical Engineering Research</h3>
-              </div>
-              </a>
-            </div>
-
-            <div className="box">
-              
-              <a href="https://www.cs.purdue.edu/research/" className="image fit"><img src={researchpicture2} width="400" height="100" alt="Computer Science"/>
-              <div className="inner">
-                <h3>Computer Science Research</h3>
-              </div>
-              </a>
-
-            </div>
-
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/IE/research" className="image fit"><img src={researchpicture3} width="400" height="100" alt="EngineeringIe"/>
-              <div className="inner" >
-                <h3>Industrial Engineeing Research</h3>
-              </div>
-              </a>
-
-            </div>
-
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/ChE/research" className="image fit"><img src={researchpicture4} width="400" height="100" alt="EngineeringChe" />
-              <div className="inner" >
-                <h3>Chemical Engineeing Research</h3>
-              </div>
-              </a>
-
-            </div>
-
-            <div className="box">
-              
-              <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit"><img src={researchpicture5} width="400" height="100" alt="Polytech"/>
-              <div className="inner">
-                <h3>Polytechnic Institute Research</h3>
-              </div>
-              </a>
-
-            </div>
-
-            <div className="box">
-              
-                <a href="https://www.pharmacy.purdue.edu/research" className="image fit"><img src={researchpicture6} width="400" height="100" alt="Pharmacy" />
-                <div className="inner">
-                  <h3>Pharmacy Research</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 col-md-4"> 
+                <div className="box">
+                  <a href="https://engineering.purdue.edu/ME/Research" className="image fit">
+                  <img src={researchpicture1} width="300" height="250" alt="Engineering" />
+                  <div className="inner">
+                    <h5>Mechanical Engineering Research</h5>
+                  </div>
+                  </a>
                 </div>
-                </a>
+              </div>
+              <div class="col-sm-4">
+                <div className="box">
+                <a href="https://www.cs.purdue.edu/research/" className="image fit">
+                  <img src={researchpicture2} width="300" height="250" alt="Computer Science"/>
+                  <div className="inner">
+                    <h5>Computer Science Research</h5>
+                  </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4"> 
+                <div className="box">
+                <a href="https://engineering.purdue.edu/IE/research" className="image fit">
+                  <img src={researchpicture3} width="300" height="250" alt="EngineeringIe"/>
 
-            </div>  
+                  <div className="inner">
+                    <h5>Industrial Engineeing Research</h5>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div className="box">
+                <a href="https://engineering.purdue.edu/ChE/research" className="image fit">
+                  <img src={researchpicture4} width="300" height="250" alt="EngineeringChe" />
+
+                  <div className="inner">
+                    <h5>Chemical Engineeing Research</h5>
+                  </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div className="box">
+                <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit">
+                  <img src={researchpicture5} width="300" height="250" alt="Polytech"/>
+
+                  <div className="inner">
+                    <h5>Polytechnic Institute Research</h5>
+                  </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div className="box">
+                <a href="https://www.pharmacy.purdue.edu/research" className="image fit">
+                  <img src={researchpicture6} width="300" height="250" alt="Pharmacy" />
+                  
+                  <div className="inner">
+                    <h5>Pharmacy Research</h5>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
           </div>
 
           <div >
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Title</h5>
+              </div>
+              <div class="col-md-4">
+                <h5>Date</h5>
+              </div>
+            </div>
+        
           {displayposts}
+          </div>  
              <ReactPaginate
               previousLabel={"Prev"}
               nextLabel={"Next"}
