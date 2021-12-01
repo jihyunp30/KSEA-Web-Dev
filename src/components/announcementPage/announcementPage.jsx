@@ -14,6 +14,9 @@ import { useHistory } from 'react-router-dom';
 
 import Posts from './components/Posts';
 import Pagination from './components/Pagination';
+
+
+
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 {/* changed four sentences above*/}
@@ -30,7 +33,7 @@ function AnnouncementPage(props) {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(10);
+    const [postsPerPage] = useState(15);
 
 
 
@@ -42,10 +45,13 @@ function AnnouncementPage(props) {
             .get()
             .then((collections) => {
                 setLoading(true);
-                const res = collections.docs.map((doc) => doc.data());
-              
-            setPosts(res);
-            setLoading(false);
+                const res = collections.docs.map((doc) => {
+                    const test = doc.data();
+                    test.id = doc.id
+                    return test;
+                });
+                setPosts(res);
+                setLoading(false);
             });
         }
 
@@ -80,14 +86,20 @@ function AnnouncementPage(props) {
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
-                        <Nav.Link id='nav_text'>Research</Nav.Link>
+                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
             </div>
             <div id='body'>
                 {/*right here*/}
+                {"Announcement"}
                 <div>
+
+
                     <Posts posts={currentPosts} loading={loading} />
+
+                    
+
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPosts={posts.length}

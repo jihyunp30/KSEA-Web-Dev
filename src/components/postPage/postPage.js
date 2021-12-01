@@ -1,4 +1,4 @@
-import './indiPostPage.css';
+import './postPage.css';
 
 import firebase, {db} from "../../firebase_setup"
 
@@ -8,25 +8,30 @@ import Button from 'react-bootstrap/Button'
 
 
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
-import { useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
 
-function IndiPostPage(props) {
-
-    const { postID } = useParams();
+function PostPage(props) {
 
     const [title, setTitle] = useState("")
-    const [text, setText] = useState("")
-    const [time, setTime] = useState("")
+    const { collection } = useParams();
+    const { postID } = useParams();
 
-    const getPost = () => {
+    function captializeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+
+    useEffect(() =>  {
+        
 
         function getTitle(documentSnapshot) {
             return documentSnapshot.get('title');
         }
         
-        db.collection('Announcement')
+        db.collection(captializeFirstLetter(collection)) // 웹사이트에 인풋할땐 각 페이지마다 이름을 바꿔서 넣어준다
         .doc(postID)
         .get()
         .then(documentSnapshot => getTitle(documentSnapshot))
@@ -34,12 +39,18 @@ function IndiPostPage(props) {
             setTitle(title)
         });
 
+    });
+        
 
-    }
+
+
+
 
     return(
         <div>
+
             <div id="heading">
+                
                 <hr id="top_line"></hr>
                 
                 <div id='heading_text'>
@@ -55,18 +66,14 @@ function IndiPostPage(props) {
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
-                        <Nav.Link id='nav_text'>Research</Nav.Link>
+                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
             </div>
             <div id='body'>
-                <div>
-                    <Button onClick={getPost}>Get Post</Button>
-                </div>
-                <div>
-                    <h2>{title}</h2>
-                </div>
-
+                    <div>
+                        <h1>{title}</h1>
+                    </div>
                 <Button className ='contact'>Contact Us</Button>
 
                 <footer>
@@ -75,9 +82,9 @@ function IndiPostPage(props) {
                     In 2020 by web dev team
                 </footer>
             </div>
-            
+
         </div>
     )
 }
 
-export default IndiPostPage
+export default PostPage
