@@ -125,78 +125,77 @@ useEffect(() => {
         <Jumbotron id='jumbo_body'>
           <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 col-md-4"> 
-                <div className="box">
-                  <a href="https://engineering.purdue.edu/ME/Research" className="image fit">
-                  <img src={researchpicture1} width="300" height="250" alt="Engineering" />
-                  <div className="inner">
-                    <h5>Mechanical Engineering Research</h5>
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div className="box">
-                <a href="https://www.cs.purdue.edu/research/" className="image fit">
-                  <img src={researchpicture2} width="300" height="250" alt="Computer Science"/>
-                  <div className="inner">
-                    <h5>Computer Science Research</h5>
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-4"> 
-                <div className="box">
-                <a href="https://engineering.purdue.edu/IE/research" className="image fit">
-                  <img src={researchpicture3} width="300" height="250" alt="EngineeringIe"/>
 
-                  <div className="inner">
-                    <h5>Industrial Engineeing Research</h5>
-                  </div>
-                  </a>
-                </div>
+          <div class="card-columns">
+            <div class="card mt-4" >
+              <img class="card-img-top" src={researchpicture1} alt="Engineering"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Mechanical Engineering Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
               </div>
+              <a href="https://engineering.purdue.edu/ME/Research" class="btn btn-primary">Learn more</a>
+
             </div>
-            <div class="row">
-              <div class="col-sm-4">
-                <div className="box">
-                <a href="https://engineering.purdue.edu/ChE/research" className="image fit">
-                  <img src={researchpicture4} width="300" height="250" alt="EngineeringChe" />
+            <div class="card mt-4">
+              <img class="card-img-top" src={researchpicture1} alt="Computer Science"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Computer Science Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://www.cs.purdue.edu/research/" class="btn btn-primary">Learn more</a>
 
-                  <div className="inner">
-                    <h5>Chemical Engineeing Research</h5>
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div className="box">
-                <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit">
-                  <img src={researchpicture5} width="300" height="250" alt="Polytech"/>
-
-                  <div className="inner">
-                    <h5>Polytechnic Institute Research</h5>
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div className="box">
-                <a href="https://www.pharmacy.purdue.edu/research" className="image fit">
-                  <img src={researchpicture6} width="300" height="250" alt="Pharmacy" />
-                  
-                  <div className="inner">
-                    <h5>Pharmacy Research</h5>
-                  </div>
-                  </a>
-                </div>
-              </div>
             </div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="card mt-4 ">
+              <img src={researchpicture1} class="card-img-top" alt="EngineeringIe"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Industrial Engineeing Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://engineering.purdue.edu/IE/research" class="btn btn-primary">Learn more</a>
+
+            </div>
+            <div class="card mt-4 ">
+              <img src={researchpicture1} class="card-img-top" alt="EngineeringChe" />
+              <div class="card-body text-center">
+                <h4 class="card-title">Chemical Engineeing Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://engineering.purdue.edu/ChE/research" class="btn btn-primary">Learn more</a>
+
+            </div>
+            <div class="card mt-4">
+              <img src={researchpicture1}  class="card-img-top" alt="Polytech"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Polytechnic Institute Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://polytechnic.purdue.edu/office-of-research" class="btn btn-primary">Learn more</a>
+
+            </div>
+            <div class="card mt-4">
+              <img src={researchpicture1} class="card-img-top" alt="Pharmacy" />
+              <div class="card-body text-center">
+                <h4 class="card-title">Pharmacy Research</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://www.pharmacy.purdue.edu/research" class="btn btn-primary">Learn more</a>
+
+            </div>
           </div>
+
+
 
           <div >
 
@@ -212,6 +211,7 @@ useEffect(() => {
         
           {displayposts}
           </div>  
+            
              <ReactPaginate
               previousLabel={"Prev"}
               nextLabel={"Next"}
