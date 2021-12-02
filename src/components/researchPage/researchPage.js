@@ -15,7 +15,6 @@ import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import firebase, {db}  from "../../firebase_setup"
 import { useEffect, useState } from 'react';
 
-import './pagination.css';
 
 import ReactPaginate from "react-paginate";
 
@@ -66,14 +65,21 @@ useEffect(() => {
     .slice(pagesVisited, pagesVisited + postsperpage)
     .map((post) => {
       return (
-        <div className="post">
-          <a href = {"/research/" + post.id}>
-          <h3>{post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)} </h3>
-          
+        <tr>
+        <td>
+          <a href = {"/research/" + post.id  }>
+                  {post.title}  
           </a>
+        </td>
+        <td>
+          {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
+        </td>
+      </tr>
+        
+          
 
 
-        </div>
+        
       );
     });
 
@@ -85,7 +91,6 @@ useEffect(() => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-
 
   return (
 
@@ -118,84 +123,117 @@ useEffect(() => {
 
       <div className='body_jumbo'>
         <Jumbotron id='jumbo_body'>
-          <h1 className='jumbo_title'>KSEA YG PURDUE</h1>
+          <h1 className='jumbo_title'>Research</h1>
 
-          
-        
-          <div className="thumbnails">
 
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/ME/Research" className="image fit"><img src={researchpicture1} width="400" height="100" alt="Engineering" />
-              <div className="inner">
-                <h3>Mechanical Engineering Research</h3>
+          <div class="card-columns">
+            <div class="card mt-4" >
+              <img class="card-img-top" src={researchpicture1} alt="Engineering"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Mechanical Engineering</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
               </div>
-              </a>
-            </div>
-
-            <div className="box">
-              
-              <a href="https://www.cs.purdue.edu/research/" className="image fit"><img src={researchpicture2} width="400" height="100" alt="Computer Science"/>
-              <div className="inner">
-                <h3>Computer Science Research</h3>
-              </div>
-              </a>
+              <a href="https://engineering.purdue.edu/ME/Research" class="btn btn-primary">Learn more</a>
 
             </div>
-
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/IE/research" className="image fit"><img src={researchpicture3} width="400" height="100" alt="EngineeringIe"/>
-              <div className="inner" >
-                <h3>Industrial Engineeing Research</h3>
+            <div class="card mt-4">
+              <img class="card-img-top" src={researchpicture1} alt="Computer Science"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Computer Science</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
               </div>
-              </a>
+              <a href="https://www.cs.purdue.edu/research/" class="btn btn-primary">Learn more</a>
 
             </div>
-
-            <div className="box">
-              
-              <a href="https://engineering.purdue.edu/ChE/research" className="image fit"><img src={researchpicture4} width="400" height="100" alt="EngineeringChe" />
-              <div className="inner" >
-                <h3>Chemical Engineeing Research</h3>
+            <div class="card mt-4 ">
+              <img src={researchpicture1} class="card-img-top" alt="EngineeringIe"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Industrial Engineeing</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
               </div>
-              </a>
+              <a href="https://engineering.purdue.edu/IE/research" class="btn btn-primary">Learn more</a>
 
             </div>
-
-            <div className="box">
-              
-              <a href="https://polytechnic.purdue.edu/office-of-research" className="image fit"><img src={researchpicture5} width="400" height="100" alt="Polytech"/>
-              <div className="inner">
-                <h3>Polytechnic Institute Research</h3>
+            <div class="card mt-4 ">
+              <img src={researchpicture1} class="card-img-top" alt="EngineeringChe" />
+              <div class="card-body text-center">
+                <h4 class="card-title">Chemical Engineeing</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
               </div>
-              </a>
+              <a href="https://engineering.purdue.edu/ChE/research" class="btn btn-primary">Learn more</a>
 
             </div>
+            <div class="card mt-4">
+              <img src={researchpicture1}  class="card-img-top" alt="Polytech"/>
+              <div class="card-body text-center">
+                <h4 class="card-title">Polytechnic Institute</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://polytechnic.purdue.edu/office-of-research" class="btn btn-primary">Learn more</a>
 
-            <div className="box">
-              
-                <a href="https://www.pharmacy.purdue.edu/research" className="image fit"><img src={researchpicture6} width="400" height="100" alt="Pharmacy" />
-                <div className="inner">
-                  <h3>Pharmacy Research</h3>
-                </div>
-                </a>
+            </div>
+            <div class="card mt-4">
+              <img src={researchpicture1} class="card-img-top" alt="Pharmacy" />
+              <div class="card-body text-center">
+                <h4 class="card-title">Pharmacy</h4>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </p>
+              </div>
+              <a href="https://www.pharmacy.purdue.edu/research" class="btn btn-primary">Learn more</a>
 
-            </div>  
+            </div>
           </div>
 
+
+
           <div >
-          {displayposts}
+          
+          
+          <div class="container w-50">
+            <table class="table table-striped">
+            <thead>
+            <tr >
+              <th >Title</th>
+              <th>Date</th>
+            </tr>
+            {displayposts}
+
+            </thead>
+            <tbody>
+          
+     
+    </tbody>
+  </table>
+</div>
+         
+            
              <ReactPaginate
               previousLabel={"Prev"}
               nextLabel={"Next"}
               pageCount={pageCount}
               onPageChange={changePage}
-              containerClassName={"paginationBttns"}
-              previousLinkClassName={"previousBttn"}
-              nextLinkClassName={"nextBttn"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
+              breakClassName="page-item"
+              breakLabel={<a className="page-link">...</a>}
+              pageClassName="page-item"
+              previousClassName="page-item"
+              nextClassName="page-item"
+              pageLinkClassName="page-link"
+              previousLinkClassName="page-link"
+              nextLinkClassName="page-link"
+              activeClassName="active"
+              containerClassName="pagination  justify-content-center"
+
             />
           </div>
 
