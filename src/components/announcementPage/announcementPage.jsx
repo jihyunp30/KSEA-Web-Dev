@@ -14,6 +14,9 @@ import { useHistory } from 'react-router-dom';
 
 import Posts from './components/Posts';
 import Pagination from './components/Pagination';
+
+
+
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 {/* changed four sentences above*/}
@@ -30,7 +33,7 @@ function AnnouncementPage(props) {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(10);
+    const [postsPerPage] = useState(15);
 
 
 
@@ -89,8 +92,14 @@ function AnnouncementPage(props) {
             </div>
             <div id='body'>
                 {/*right here*/}
+                {"Announcement"}
                 <div>
+
+
                     <Posts posts={currentPosts} loading={loading} />
+
+                    
+
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPosts={posts.length}

@@ -10,8 +10,10 @@ const Posts = ({ posts, loading }) => {
       {posts.map(post => (
         <li key={post.id} className='list-group-item'>
           <a href={"/announcement/" + post.id}>
-            {post.title} {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
+            {post.title} <br></br>
+          
           </a>
+          {new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}
         </li>
       ))}
     </ul>
