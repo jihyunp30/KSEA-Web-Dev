@@ -78,6 +78,7 @@ function PostPage(props) {
         
         //시간
 
+        
         function getImage(documentSnapshot) {
             return documentSnapshot.get('image');
         }
@@ -125,32 +126,30 @@ function PostPage(props) {
                 </div>
             </div>
             <br></br>
-            <div id='body'align = "left">
-                    <div classname = 'body_card'>
-                        <Card border = "dark" style={{ width: '50rem', height : '40rem'}} className = "mx-auto">
-                            <Card.Body>
-                                <Card.Title classname = 'card_title'>{title}</Card.Title>
+            <div align = "left">
+                <div>
+                    <Card.Body class = "body_jumbo">
+                        <Card.Title class = 'card_title'>{title}</Card.Title>
 
-                                <br></br>
+                        <br></br>
 
-                                <Card.Subtitle className = 'nav_subtext'>{date} {time}</Card.Subtitle>
+                        <Card.Subtitle id = 'nav_subtext'>{date} {time}</Card.Subtitle>
 
-                                <br></br>
+                        <br></br>
 
-                                <Card.Text classname = 'card_text'>
-                                {text}
-                                </Card.Text>
+                        <Card.Text class = 'card_text'>
+                        {text}
+                        </Card.Text>
 
-                                <br></br>
+                        <br></br>
 
-                                <body>
-                                <img src= {image} width="300" height="300" align = "center">
-                                </img>
-                                </body>
+                        
+                        <img src= {image} onerror="this.style.display='none'" class = "center">
+                        </img>
+                        
 
-                            </Card.Body>
-                        </Card> 
-                    </div>
+                    </Card.Body>
+                </div>
 
 
 
