@@ -19,11 +19,11 @@ import { useEffect, useState } from 'react';
 import ReactPaginate from "react-paginate";
 
 import researchpicture1 from '../../assets/engineering.jpg'
-import researchpicture2 from '../../assets/human-factors.jpg'
-import researchpicture3 from '../../assets/manufacturing.jpg'
-import researchpicture4 from '../../assets/operations-research.jpg'
-import researchpicture5 from '../../assets/production-systems.jpg'
-import researchpicture6 from '../../assets/polytec.jpg'
+import researchpicture2 from '../../assets/IE.jpg'
+import researchpicture3 from '../../assets/polytech.jpg'
+import researchpicture4 from '../../assets/chem.jpg'
+import researchpicture5 from '../../assets/pharm.jpg'
+import researchpicture6 from '../../assets/cs.jpg'
 
 function ResearchPage(props) {
 
@@ -34,6 +34,7 @@ const [posts, setPosts] = useState([]);
 const fetchposts=async()=>{
   db
   .collection('Research')
+  .orderBy('time', 'desc')
   .get()
   .then((snapshot) => {
     const researches = snapshot.docs.map((doc) => {
@@ -57,7 +58,7 @@ useEffect(() => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const postsperpage = 3;
+  const postsperpage = 5;
   const pagesVisited = pageNumber * postsperpage;
 
 
@@ -139,7 +140,7 @@ useEffect(() => {
 
             </div>
             <div class="card mt-4">
-              <img class="card-img-top" src={researchpicture1} alt="Computer Science"/>
+              <img class="card-img-top" src={researchpicture6} alt="Computer Science"/>
               <div class="card-body text-center">
                 <h4 class="card-title">Computer Science</h4>
                 <p class="card-text">
@@ -150,7 +151,7 @@ useEffect(() => {
 
             </div>
             <div class="card mt-4 ">
-              <img src={researchpicture1} class="card-img-top" alt="EngineeringIe"/>
+              <img src={researchpicture2} class="card-img-top" alt="EngineeringIe"/>
               <div class="card-body text-center">
                 <h4 class="card-title">Industrial Engineeing</h4>
                 <p class="card-text">
@@ -161,7 +162,7 @@ useEffect(() => {
 
             </div>
             <div class="card mt-4 ">
-              <img src={researchpicture1} class="card-img-top" alt="EngineeringChe" />
+              <img src={researchpicture4} class="card-img-top" alt="EngineeringChe" />
               <div class="card-body text-center">
                 <h4 class="card-title">Chemical Engineeing</h4>
                 <p class="card-text">
@@ -172,7 +173,7 @@ useEffect(() => {
 
             </div>
             <div class="card mt-4">
-              <img src={researchpicture1}  class="card-img-top" alt="Polytech"/>
+              <img src={researchpicture3}  class="card-img-top" alt="Polytech"/>
               <div class="card-body text-center">
                 <h4 class="card-title">Polytechnic Institute</h4>
                 <p class="card-text">
@@ -183,7 +184,7 @@ useEffect(() => {
 
             </div>
             <div class="card mt-4">
-              <img src={researchpicture1} class="card-img-top" alt="Pharmacy" />
+              <img src={researchpicture5} class="card-img-top" alt="Pharmacy" />
               <div class="card-body text-center">
                 <h4 class="card-title">Pharmacy</h4>
                 <p class="card-text">
@@ -200,10 +201,10 @@ useEffect(() => {
           <div >
           
           
-          <div class="container w-50">
+          <div class="container w-30">
             <table class="table table-striped">
             <thead>
-            <tr >
+            <tr>
               <th >Title</th>
               <th>Date</th>
             </tr>
