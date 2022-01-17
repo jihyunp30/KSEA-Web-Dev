@@ -58,7 +58,7 @@ useEffect(() => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const postsperpage = 5;
+  const postsperpage = 10;
   const pagesVisited = pageNumber * postsperpage;
 
 
@@ -120,76 +120,72 @@ useEffect(() => {
     </div>
     <div id='body'>
       <hr className="body_line" align="center"></hr>
-
-
       <div className='body_jumbo'>
         <Jumbotron id='jumbo_body'>
-          <h1 className='jumbo_title'>Research</h1>
-
-
+          <h1 className='jumbo_title '>Research</h1>
           <div class="card-columns">
             <div class="card mt-4" >
-              <img class="card-img-top" src={researchpicture1} alt="Engineering"/>
+              {/* <img class="card-img-top" src={researchpicture1} alt="Engineering"/> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Mechanical Engineering</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://engineering.purdue.edu/ME/Research" class="btn btn-primary">Learn more</a>
 
             </div>
             <div class="card mt-4">
-              <img class="card-img-top" src={researchpicture6} alt="Computer Science"/>
+              {/* <img class="card-img-top" src={researchpicture6} alt="Computer Science"/> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Computer Science</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://www.cs.purdue.edu/research/" class="btn btn-primary">Learn more</a>
 
             </div>
             <div class="card mt-4 ">
-              <img src={researchpicture2} class="card-img-top" alt="EngineeringIe"/>
+              {/* <img src={researchpicture2} class="card-img-top" alt="EngineeringIe"/> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Industrial Engineeing</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://engineering.purdue.edu/IE/research" class="btn btn-primary">Learn more</a>
 
             </div>
             <div class="card mt-4 ">
-              <img src={researchpicture4} class="card-img-top" alt="EngineeringChe" />
+              {/* <img src={researchpicture4} class="card-img-top" alt="EngineeringChe" /> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Chemical Engineeing</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://engineering.purdue.edu/ChE/research" class="btn btn-primary">Learn more</a>
 
             </div>
             <div class="card mt-4">
-              <img src={researchpicture3}  class="card-img-top" alt="Polytech"/>
+              {/* <img src={researchpicture3}  class="card-img-top" alt="Polytech"/> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Polytechnic Institute</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://polytechnic.purdue.edu/office-of-research" class="btn btn-primary">Learn more</a>
 
             </div>
             <div class="card mt-4">
-              <img src={researchpicture5} class="card-img-top" alt="Pharmacy" />
+              {/* <img src={researchpicture5} class="card-img-top" alt="Pharmacy" /> */}
               <div class="card-body text-center">
                 <h4 class="card-title">Pharmacy</h4>
-                <p class="card-text">
+                {/* <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                </p> */}
               </div>
               <a href="https://www.pharmacy.purdue.edu/research" class="btn btn-primary">Learn more</a>
 
@@ -201,7 +197,7 @@ useEffect(() => {
           <div >
           
           
-          <div class="container w-30">
+          <div class="container w-100">
             <table class="table table-striped">
             <thead>
             <tr>
