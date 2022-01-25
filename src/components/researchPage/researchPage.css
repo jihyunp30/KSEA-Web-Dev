@@ -189,9 +189,19 @@ a:link, a:visited, a:hover, a:active {
 
 .btn-primary{
   margin-bottom: 10px;
+
+}
+
+.btn{
+  background-color: #2d2d2d;
+
 }
 
 .table {
   margin-top: 50px;
 
+}
+
+.page-item.active .page-link{
+  background-color: #2d2d2d;
 }
