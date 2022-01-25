@@ -193,7 +193,9 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .btn{
-  background-color: #2d2d2d;
+  background-color: #82918b;
+  border-style: none;
+;
 
 }
 
@@ -203,5 +205,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .page-item.active .page-link{
-  background-color: #2d2d2d;
+  background-color: #82918b;
+  border-style: none;
+
 }
