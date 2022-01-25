@@ -187,5 +187,11 @@ a:link, a:visited, a:hover, a:active {
   color: black;
 }
 
+.btn-primary{
+  margin-bottom: 10px;
+}
 
+.table {
+  margin-top: 50px;
 
+}

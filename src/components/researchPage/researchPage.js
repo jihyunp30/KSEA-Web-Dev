@@ -200,7 +200,7 @@ useEffect(() => {
           
           
           
-          <div class="container">
+          {/* <div class="container"> */}
             <table class="table table-hover">
               <thead>
                 <tr>
@@ -230,7 +230,7 @@ useEffect(() => {
               containerClassName="pagination  justify-content-center"
 
             />
-</div>
+{/* </div> */}
          
             
              
