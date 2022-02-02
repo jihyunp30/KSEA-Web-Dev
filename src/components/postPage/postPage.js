@@ -126,7 +126,7 @@ function PostPage(props) {
                 </div>
             </div>
             <br></br>
-            <div align = "left">
+            <div align = "left" id = "body" >
                 <div>
                     <Card.Body class = "body_jumbo">
                         <Card.Title class = 'card_title'>{title}</Card.Title>
@@ -142,29 +142,36 @@ function PostPage(props) {
                         </Card.Text>
 
                         <br></br>
-
+                        
                         
                         <img src= {image} onerror="this.style.display='none'" class = "center">
                         </img>
+
                         
+                            
 
                     </Card.Body>
                 </div>
 
+                
+
+                <footer id ="footer">
+                        KSEA YG Purdue
+                        <br></br>
+                        In 2020 by web dev team
+                </footer>
 
 
                 <Button className ='contact'>Contact Us</Button>
 
                 <br></br>
 
-                <footer>
-                    KSEA YG Purdue
-                    <br></br>
-                    In 2020 by web dev team
-                </footer>
+                
             </div>
+            
 
         </div>
+        
     )
 }
 

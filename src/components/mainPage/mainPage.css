@@ -61,7 +61,7 @@ html {
 }
 
 #body {
-    height: 100%;
+    height: auto;
     background: linear-gradient(15deg, var(--white) 50%, white 0%);
 
 }
@@ -105,7 +105,7 @@ html {
 }
 
 .body_jumbo {
-    width: 90%;
+    width: auto;
     margin: auto;
     padding-top: 3em;
     padding-bottom: 3em;
@@ -139,10 +139,10 @@ html {
 }
 
 footer {
-    width: 100%;
-    padding-bottom: 2em;
     text-align: center;
     color: var(--black);
+    bottom: 0;
+    border: 0em;
 }
 
 .contact {
@@ -164,3 +164,4 @@ footer {
     background-color: var(--dblue) !important;
     border: 0em;
 }
+
