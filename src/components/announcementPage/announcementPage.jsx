@@ -1,42 +1,42 @@
 import './announcementPage.css';
 import firebase, {db} from "../../firebase_setup"
-
+ 
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
-
-
+ 
+ 
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import { useHistory } from 'react-router-dom';
-
-
-
-
+ 
+ 
+ 
+ 
 import Posts from './components/Posts';
 import Pagination from './components/Pagination';
-
-
-
+ 
+ 
+ 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 {/* changed four sentences above*/}
-
+ 
 function AnnouncementPage(props) {
-
+ 
     const history = useHistory()
-
+ 
     const routeChange=()=> {
         history.push('/posting');
     }
-
+ 
     {/*right here*/}
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(15);
-
-
-
+ 
+ 
+ 
     useEffect(() => {
         const fetchPosts = async () => {
             db
@@ -54,25 +54,25 @@ function AnnouncementPage(props) {
                 setLoading(false);
             });
         }
-
+ 
         fetchPosts();
     }, []);
-
-    
+ 
+   
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
+ 
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
-
-
+ 
+ 
     return(
         <div>
             <div id="heading">
                 <hr id="top_line"></hr>
-                
+               
                 <div id='heading_text'>
                     <img width="420" height="132" src={logo} />
                 </div>
@@ -92,42 +92,164 @@ function AnnouncementPage(props) {
             </div>
             <div id='body'>
                 {/*right here*/}
-                {"Announcement"}
+                <h2>Announcement</h2>
                 <div>
-
-
+ 
+ 
+               
+ 
+                 
+ 
+ 
+                <div class="card-columns">
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">abcdf</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                       
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+ 
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+ 
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+ 
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            </div>
+                        </div>  
+                    </div>
+ 
+ 
+ 
                     <Posts posts={currentPosts} loading={loading} />
-
-                    
-
+ 
+ 
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPosts={posts.length}
                         paginate={paginate}
                     />
                 </div>
-
-
+ 
+ 
                 <div>
                     <Button onClick={routeChange}>Write</Button>
                 </div>
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
                 <Button className ='contact'>Contact Us</Button>
-
+ 
                 <footer>
                     KSEA YG Purdue
                     <br></br>
                     In 2020 by web dev team
                 </footer>
             </div>
-            
+           
         </div>
     )
 }
-
+ 
 export default AnnouncementPage
+

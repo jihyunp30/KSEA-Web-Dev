@@ -5,109 +5,109 @@
   --lblue: #aebab4;
   --dblue: #82918b;
 }
-
+ 
 html {
 margin:10px auto;
 width:99%;
 height:98%;
 }
-
+ 
 #heading {
   margin-left: 10px;
   margin-right: 10px;
 }
-
+ 
 #heading_text {
   margin: 4em;
   text-align: left;
 }
-
+ 
 #top_line {
   width: 100%;
   background-color: var(--lblue);
 }
-
+ 
 #nav_text {
   color: white;
 }
 #nav_subtext {
   color: var(--lblue);
 }
-
+ 
 .nav {
   background-color: var(--lblue);
 }
-
+ 
 #body_carousel {
   width: 75%;
   margin: auto;
   padding-top: 3em;
   padding-bottom: 3em;
 }
-
+ 
 .carousel_body h3{
   display: inline-block;
   color: var(--dblue);
   background-color: var(--white);
   padding: .2em .5em;
 }
-
+ 
 .carousel_body p{
   display: inline-block;
   color: var(--lblue);
   background-color: var(--white);
   padding: .2em .5em;
 }
-
+ 
 #body {
   height: 100%;
   background: linear-gradient(15deg, var(--white) 50%, white 0%);
-
+ 
 }
-
+ 
 .body_line {
   background-color: var(--white);
   width: 60%
 }
-
+ 
 .body_card {
   width: 75%;
   margin: auto;
   padding-top: 3em;
   padding-bottom: 3em;
 }
-
+ 
 #card_header {
   background-color: var(--lblue);
   color: var(--black);
 }
-
+ 
 #card_body {
   background-color: #ffffff80;
   padding: 3em;
 }
-
+ 
 .card_button {
   background-color: var(--dblue) !important;
   border: 0em;
 }
-
+ 
 .card_title {
   color: var(--black);
   font-size: 28px;
 }
-
+ 
 .card_text{
   color: var(--black);
   font-size: 20px;
 }
-
+ 
 .body_jumbo {
   width: 90%;
   margin: auto;
   padding: 0%;
 }
-
+ 
 #jumbo_body {
   padding-top: 0em;
   padding-bottom: 0%;
@@ -116,33 +116,33 @@ height:98%;
   background-color: #FFFFFF;
   margin-bottom: 0%;
 }
-
+ 
 .jumbo_title{
   color: var(--black);
   font-size: 50px;
   padding-bottom: 10px;
 }
-
+ 
 .jumbo_text{
   color: var(--black);
   font-size: 18px;
   text-indent: 1em;
 }
-
+ 
 .jumbo_button {
   background-color: var(--gold) !important;
   border: 0em;
   margin-left: 1em;
   margin-top: 1em;
 }
-
+ 
 footer {
   width: 100%;
   padding-bottom: 2em;
   text-align: center;
   color: var(--black);
 }
-
+ 
 .contact {
   position: fixed;
   background-color: var(--lblue) !important;
@@ -150,3 +150,32 @@ footer {
   right: 4em;
   bottom: 0;
 }
+ 
+ 
+ 
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+ 
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+ 
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+ 
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
