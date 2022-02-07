@@ -164,3 +164,9 @@ footer {
     background-color: var(--dblue) !important;
     border: 0em;
 }
+
+.btn:hover{
+    background-color: #2d2d2d;
+    border-style: none;
+  
+  }
