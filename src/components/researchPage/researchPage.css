@@ -195,7 +195,12 @@ a:link, a:visited, a:hover, a:active {
 .btn{
   background-color: #82918b;
   border-style: none;
-;
+
+}
+
+.btn:hover{
+  background-color: #2d2d2d;
+  border-style: none;
 
 }
 

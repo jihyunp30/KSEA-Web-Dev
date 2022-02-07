@@ -29,8 +29,6 @@ function ResearchPage(props) {
 
 const [posts, setPosts] = useState([]);
 
-
-
 const fetchposts=async()=>{
   db
   .collection('Research')
@@ -79,10 +77,6 @@ useEffect(() => {
           </a>
         </td>
       </tr>
-        
-          
-
-
         
       );
     });
