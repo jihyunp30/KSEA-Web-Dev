@@ -13,15 +13,23 @@ const Posts = ({ posts, loading }) => {
           key={post.id}
           className="mb-2"
         >
-          <Card.Header>{new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}</Card.Header>
           <Card.Body>
-            <Card.Title>{post.title}</Card.Title>
+            <h4 class="card-title">{post.title}</h4>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
+
+            <div class="row">
+              <div class="col-10 text-truncate">
+                {post.text}
+              </div>
+            </div>
+
+              
               {/* <a href={"/announcement/" + post.id}></a> */}
             </Card.Text>
           </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">{new Date(post.time.seconds * 1000).toISOString().substring(0, 10)}</small>
+          </Card.Footer>
         </Card>
       ))}
     </div>

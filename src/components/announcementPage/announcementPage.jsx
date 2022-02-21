@@ -92,7 +92,7 @@ function AnnouncementPage(props) {
             </div>
             <div id='body'>
                 {/*right here*/}
-                <h2>Announcement</h2>
+                <h1 className='jumbo_title '>Announcement</h1>
                 <div>
                     <Posts posts={currentPosts} loading={loading} />
  
