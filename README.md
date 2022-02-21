@@ -6,6 +6,8 @@ Prerequisites
 ### 'npm install react-router-dom'
 ### 'npm i firsbase'
 ### 'npm install axios'
+### 'npm install react-paginate --save'
+
 
 실행이 안되시거나 blank 페이지가 나온다면 .env.local 파일이 있는지 확인하여 주세요.
 
