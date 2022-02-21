@@ -121,13 +121,13 @@ function PostPage(props) {
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
                         <Nav.Link id='nav_text'>Photo</Nav.Link>
-                        <Nav.Link id='nav_text'>Research</Nav.Link>
+                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
             </div>
             <br></br>
             <div align = "left" id = "body" >
-                <div>
+                <div id = "card">
                     <Card.Body class = "body_jumbo">
                         <Card.Title class = 'card_title'>{title}</Card.Title>
 
@@ -136,24 +136,21 @@ function PostPage(props) {
                         <Card.Subtitle id = 'nav_subtext'>{date} {time}</Card.Subtitle>
 
                         <br></br>
+                        <div id= 'test_body'>
+                            <Card.Text class = 'card_text'>
+                                {text}
+                            </Card.Text>
 
-                        <Card.Text class = 'card_text'>
-                        {text}
-                        </Card.Text>
-
-                        <br></br>
-                        
-                        
-                        <img src= {image} onerror="this.style.display='none'" class = "center">
-                        </img>
-
-                        
+                            <br></br>
                             
+                            <img src= {image} onerror="this.style.display='none'" class = "center">
+                            </img>
+                        </div>
 
                     </Card.Body>
                 </div>
 
-                
+                <hr class="body_line" align="center"></hr>
 
                 <footer id ="footer">
                         KSEA YG Purdue
