@@ -4,7 +4,8 @@ import firebase, {db} from "../../firebase_setup"
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
- 
+import Jumbotron from 'react-bootstrap/Jumbotron'
+
  
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 import { useHistory } from 'react-router-dom';
@@ -91,28 +92,29 @@ function AnnouncementPage(props) {
                 </div>
             </div>
             <div id='body'>
-                {/*right here*/}
-                <h1 className='jumbo_title '>Announcement</h1>
-                <div>
-                    <Posts posts={currentPosts} loading={loading} />
- 
- 
-                    <Pagination
-                        postsPerPage={postsPerPage}
-                        totalPosts={posts.length}
-                        paginate={paginate}
-                    />
+                <hr className="body_line" align="center"></hr>
+                <div className='body_jumbo'>
+                    <Jumbotron id='jumbo_body'>
+                        <h1 className='jumbo_title '>Announcement</h1>
+                        <div>
+                            <Posts posts={currentPosts} loading={loading} />
+        
+        
+                            <Pagination
+                                postsPerPage={postsPerPage}
+                                totalPosts={posts.length}
+                                paginate={paginate}
+                            />
+                        </div>
+        
+        
+                        <div>
+                            <Button onClick={routeChange}>Write</Button>
+                        </div>
+                    </Jumbotron>
                 </div>
- 
- 
-                <div>
-                    <Button onClick={routeChange}>Write</Button>
-                </div>
- 
- 
- 
- 
- 
+                
+                <hr className="body_line" align="center"></hr>
  
                 <Button className ='contact'>Contact Us</Button>
  

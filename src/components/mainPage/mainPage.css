@@ -107,12 +107,12 @@ html {
 .body_jumbo {
     width: auto;
     margin: auto;
-    padding-top: 3em;
+    padding-top: 2em;
     padding-bottom: 3em;
 }
 
 #jumbo_body {
-    padding-top: 7em;
+    padding-top: 6em;
     padding-bottom: 7em;
     padding-left:4em;
     padding-right:4em;
