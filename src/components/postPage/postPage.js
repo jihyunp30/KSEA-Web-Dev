@@ -91,8 +91,8 @@ function PostPage(props) {
             setImage(image)
         });
         
-        //사진
-
+        //사진이 list 로 받아진다면 list.map 사용 해서 display 하기
+        //announcement 참고 하기
 
     });
         
