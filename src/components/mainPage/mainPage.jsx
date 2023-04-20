@@ -1,6 +1,6 @@
 import './mainPage.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -13,7 +13,7 @@ import team_picture from '../../assets/IMG_2629.jpg'
 import test_picture from '../../assets/5138BA98-19A9-4C8B-BE4C-8AB0B4AD8A57.png'
 import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 
-import firebase, {db} from "../../firebase_setup"
+import firebase, {db, storage} from "../../firebase_setup"
 
 function MainPage(props) {
     const [showContact, setShowContact] = useState(false);
@@ -22,6 +22,47 @@ function MainPage(props) {
     const [contactMessage, setContactMessage] = useState("");
     const [contactConfirm, setContactConfirm] = useState("");
 
+    const[announcement, setAnnouncement] = useState([]);
+
+    const [imageUrls, setImageUrls] = useState([]);
+
+    useEffect(() => {
+        const fetchAnnouncement = async () => {
+            db
+            .collection('Announcement')
+            .orderBy('time','desc')
+            .limit(3)
+            .get()
+            .then((collections) => {
+                const res = collections.docs.map((doc) => {
+                    const test = doc.data();
+                    test.id = doc.id
+                    return test;
+                });
+                setAnnouncement(res);
+            });
+        }
+ 
+        fetchAnnouncement();
+    }, []);
+ 
+    useEffect(() => {
+        const storageRef = storage.ref(); 
+        const imagesRef = storageRef.child('Banner/'); 
+    
+        imagesRef.listAll().then((result) => {
+            const promises = result.items.map((item) => item.getDownloadURL());
+            Promise.all(promises).then((urls) => {
+              setImageUrls(urls);
+            }).catch((error) => {
+              console.error(error);
+            });
+          }).catch((error) => {
+            console.error(error);
+          });
+      }, []);
+
+      
     const handleReset = () => {
         setContactConfirm("")
     }
@@ -72,10 +113,16 @@ function MainPage(props) {
             <div id='body'>
                 <div id='body_carousel'>
                     <Carousel>
-                        <Carousel.Item>
+
+                  
+                    {imageUrls.map((url) => (
+                    
+                    <Carousel.Item>
+                            
                             <img
+                            key = {url}
                             className="d-block w-100"
-                            src={team_picture}
+                            src={url}
                             alt="First slide"
                             />
                             <Carousel.Caption className = 'carousel_body'>
@@ -84,31 +131,27 @@ function MainPage(props) {
                             <p>During our first zoom meeting..?</p>
                             </Carousel.Caption>
                         </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={test_picture}
-                            alt="Second slide"
-                            />
-                            <Carousel.Caption className = 'carousel_body'>
-                            <h3>Welcome to KSEA YG Purdue</h3>
-                            <br></br>
-                            <p>During our first zoom meeting..?</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
+                    ))}
+                       
                     </Carousel>
                 </div>
                 <hr class="body_line" align="center"></hr>
                 <div class = 'body_card'>
                     <Card className="text-center">
                         <Card.Header id='card_header'>New Announcement</Card.Header>
-                        <Card.Body id='card_body'>
-                            <Card.Title className ='card_title'>Announcement title</Card.Title>
+                        {announcement.length > 0 ? (
+                            announcement.map((item) => (
+                            <Card.Body id='card_body'>
+                            <Card.Title className ='card_title'>{item.title}</Card.Title>
                             <Card.Text className ='card_text'>
-                            Announcement Text
+                            {item.text}
                             </Card.Text>
                             
                         </Card.Body>
+                        ))) : (
+                        <p>No announcements available</p>
+                        )}
+                        
                     </Card>
                 </div>
                 <hr class="body_line" align="center"></hr>

@@ -29,6 +29,7 @@ html {
 
 #nav_text {
     color: white;
+    /* font-size: 1.3em; */
 }
 #nav_subtext {
     color: var(--lblue);
