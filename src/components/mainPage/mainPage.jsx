@@ -15,6 +15,8 @@ import logo from '../../assets/KSEA YG PURDUE LOGO.png'
 
 import firebase, {db, storage} from "../../firebase_setup"
 
+
+
 function MainPage(props) {
     const [showContact, setShowContact] = useState(false);
     const [contactName, setContactName] = useState("");
@@ -86,6 +88,45 @@ function MainPage(props) {
         setShowContact(true);
     }
 
+    const [posts, setPosts] = useState([]);
+
+    const fetchposts=async()=>{
+    db
+    .collection('Announcement')
+    .orderBy('time', 'desc')
+    .get()
+    .then((snapshot) => {
+        const researches = snapshot.docs.map((doc) => {
+        const test = doc.data();
+        test.id = doc.id
+         return test;
+      });
+    setPosts(researches);
+
+    });
+    }
+    useEffect(() => {
+        fetchposts();
+    }, [])
+
+    const displayannouncement = posts
+    .slice(0,1)
+    .map((post) => {
+      return (
+        <Card.Body id='card_body'>
+        <Card.Title className ='card_title'> {post.title}</Card.Title>
+        <Card.Text className ='card_text'>
+        {post.text.slice(0,50)}...
+        </Card.Text>
+        <a href = {"/research/" + post.id  } class="btn btn-primary">Learn more</a>
+
+        
+    </Card.Body>          
+         
+        
+      );
+    });
+
     return(
         <div>
             <div id="heading">
@@ -152,7 +193,10 @@ function MainPage(props) {
                         <p>No announcements available</p>
                         )}
                         
+
                     </Card>
+
+
                 </div>
                 <hr class="body_line" align="center"></hr>
 
