@@ -1,46 +1,79 @@
-:root {
+ :root {
     --black: #2d2d2d;
     --white: #ebe8e6;
     --gold: #d0a670;
     --lblue: #aebab4;
     --dblue: #82918b;
-}
+    --red: #f1005d;
+} 
+body {
+    margin-top: 80px; 
 
-html {
-  margin:10px auto;
+  }
+html{
+  /* margin:10px auto; */
+ 
   width:99%;
   height:98%;
 }
 
 #heading {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    
+    /* background-color: var(--lblue); */
+    background-color: whitesmoke;
+    /* border-radius: 5px; */
+    /* padding-top: 5px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    
+
 }
+
 
 #heading_text {
-    margin: 4em;
-    text-align: left;
+    margin: 0.5em;
+ 
+    text-align: right;
+    display: flex;
 }
 
-#top_line {
-    width: 100%;
-    background-color: var(--lblue);
+#heading_text a{
+    padding-right: 5em;
+    text-align: left;
+    /* margin-right: 50px; */
+    
 }
+
 
 #nav_text {
-    color: white;
-    /* font-size: 1.3em; */
+    color: black;
+    font-size: 1em;
 }
 #nav_subtext {
-    color: var(--lblue);
+    color: black;
 }
 
+  
 .nav {
-    background-color: var(--lblue);
+   
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: center;
+
 }
+
+
 
 #body_carousel {
-    width: 75%;
+    width: 65%;
     margin: auto;
     padding-top: 3em;
     padding-bottom: 3em;
@@ -83,6 +116,7 @@ html {
 #card_header {
     background-color: var(--lblue);
     color: var(--black);
+    font-size: 1.5em;
 }
 
 #card_body {
@@ -167,3 +201,23 @@ footer {
 }
 
 
+/* styles for large screens */
+@media screen and (min-width: 768px) {
+ 
+    .nav, .img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  /* styles for small screens */
+  @media screen and (max-width: 767px) {
+    .nav, .img {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  

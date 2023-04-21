@@ -4,7 +4,8 @@
   --gold: #d0a670;
   --lblue: #aebab4;
   --dblue: #82918b;
-}
+  --red: #f1005d;
+} 
 
 html {
 margin:10px auto;
@@ -20,29 +21,42 @@ height:98%;
 #heading_text {
   margin: 4em;
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+#heading_text a {
+  margin-right: auto;
 }
 
+#heading_text nav {
+  margin-left: auto;
+}
 #top_line {
   width: 100%;
-  background-color: var(--lblue);
+  background-color: blue;
 }
 
 #nav_text {
-  color: white;
+  color: black;
+  /* font-size: 1.9em; */
 }
 #nav_subtext {
-  color: var(--lblue);
+  color: black;
 }
 
 .nav {
-  background-color: var(--lblue);
+  background-color: white;
+
 }
+
+
 
 #body_carousel {
   width: 75%;
   margin: auto;
   padding-top: 3em;
   padding-bottom: 3em;
+  
 }
 
 .carousel_body h3{
@@ -60,7 +74,7 @@ height:98%;
 }
 
 #body {
-  height: 100%;
+  height: auto;
   background: linear-gradient(15deg, var(--white) 50%, white 0%);
 
 }
@@ -75,6 +89,7 @@ height:98%;
   margin: auto;
   padding-top: 3em;
   padding-bottom: 3em;
+  
 }
 
 #card_header {
@@ -103,18 +118,18 @@ height:98%;
 }
 
 .body_jumbo {
-  width: 90%;
+  width: auto;
   margin: auto;
-  padding: 0%;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 #jumbo_body {
   padding-top: 7em;
-  padding-bottom: 0%;
+  padding-bottom: 7em;
   padding-left:4em;
   padding-right:4em;
   background-color: #FFFFFF;
-  margin-bottom: 0%;
 }
 
 .jumbo_title{
@@ -137,10 +152,10 @@ height:98%;
 }
 
 footer {
-  width: 100%;
-  padding-bottom: 2em;
   text-align: center;
   color: var(--black);
+  bottom: 0;
+  border: 0em;
 }
 
 .contact {
@@ -151,66 +166,16 @@ footer {
   bottom: 0;
 }
 
-#jumbo_body {
-  padding-top: 2%;
-  padding-bottom: 2%;
+.confirmation {
+  position: fixed;
+  border: 0em;
+  right: 4em;
+  top: 1em;
 }
 
-.container{
-  margin-top: 50px;
-  padding-left: 0%;
-  padding-right: 0%;
-
+.send {
+  background-color: var(--dblue) !important;
+  border: 0em;
 }
 
-.table {
-  font-size: 18px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
 
-/* .container{
-  width: 1800px;
-} */
-
-
-td a {
-  display: block;
-}
-
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
-
-.table-link{
-  color: black;
-}
-
-.btn-primary{
-  margin-bottom: 10px;
-
-}
-
-.btn{
-  background-color: #82918b;
-  border-style: none;
-
-}
-
-.btn:hover{
-  background-color: #2d2d2d;
-  border-style: none;
-
-}
-
-.table {
-  margin-top: 50px;
-
-}
-
-.page-item.active .page-link{
-  background-color: #82918b;
-  border-style: none;
-
-}

@@ -41,7 +41,7 @@ function AnnouncementPage(props) {
         const fetchPosts = async () => {
             db
             .collection('Announcement')
-            .orderBy('time','asc')
+            .orderBy('time','desc')
             .get()
             .then((collections) => {
                 setLoading(true);
@@ -70,14 +70,30 @@ function AnnouncementPage(props) {
  
     return(
         <div>
-            <div id="heading">
-                <hr id="top_line"></hr>
-               
+             <div id="heading">
+                
                 <div id='heading_text'>
-                    <img width="420" height="132" src={logo} />
-                </div>
-                <div>
+                    <a href = "/">
+                    <img alt = "heading_text" width= "300vw" height='auto'  src={logo}/>
+                    {/* <img alt = "heading_text" width="500" height="150" src={logo}/> */}
+
+                    </a>
+
                     <Nav>
+                        {/* <NavDropdown id='nav_text' title='About'>
+                        <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
+                        </NavDropdown> */}
+                        {/* <Nav.Link id='nav_text' href="/about">About KSEA</Nav.Link>
+                        <Nav.Link id='nav_text' href="/members">Members</Nav.Link>
+                        <Nav.Link id='nav_text' href="/events">Events</Nav.Link>
+
+                        <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
+                        <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
+                        <Nav.Link id='nav_text'>Photo</Nav.Link>
+                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link> */}
+
                         <NavDropdown id='nav_text' title='About'>
                         <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
                         <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
@@ -89,6 +105,8 @@ function AnnouncementPage(props) {
                         <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
+               
+
             </div>
             <div id='body'>
                 {/*right here*/}
