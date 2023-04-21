@@ -7,7 +7,7 @@
     --red: #f1005d;
 } 
 body {
-    margin-top: 100px; 
+    margin-top: 80px; 
 
   }
 html{
@@ -26,15 +26,14 @@ html{
     top: 0;
     
     /* background-color: var(--lblue); */
-    background-color: white;
+    background-color: whitesmoke;
     /* border-radius: 5px; */
     /* padding-top: 5px; */
     display: flex;
-
     justify-content: center;
     align-items: center;
     z-index: 100;
-    transition: background-color 0.3s ease; /* smooth color transition */
+    
 
 }
 

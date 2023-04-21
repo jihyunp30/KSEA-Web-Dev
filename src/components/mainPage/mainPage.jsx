@@ -132,29 +132,12 @@ function MainPage(props) {
         
         <div>
             <div id="heading">
-                
                 <div id='heading_text'>
                     <a href = "/">
                     <img alt = "heading_text" width= "300vw" height='auto'  src={logo}/>
                     {/* <img alt = "heading_text" width="500" height="150" src={logo}/> */}
-
                     </a>
-
-                    <Nav>
-                        {/* <NavDropdown id='nav_text' title='About'>
-                        <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
-                        <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
-                        <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
-                        </NavDropdown> */}
-                        {/* <Nav.Link id='nav_text' href="/about">About KSEA</Nav.Link>
-                        <Nav.Link id='nav_text' href="/members">Members</Nav.Link>
-                        <Nav.Link id='nav_text' href="/events">Events</Nav.Link>
-
-                        <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
-                        <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
-                        <Nav.Link id='nav_text'>Photo</Nav.Link>
-                        <Nav.Link id='nav_text' href="/research">Research</Nav.Link> */}
-
+                    <Nav>           
                         <NavDropdown id='nav_text' title='About'>
                         <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
                         <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
@@ -166,10 +149,14 @@ function MainPage(props) {
                         <Nav.Link id='nav_text' href="/research">Research</Nav.Link>
                     </Nav>
                 </div>
-               
-
             </div>
+
+            
+
+
+
             <div id='body'>
+
                 <div id='body_carousel'>
                     <Carousel>
 
@@ -197,16 +184,23 @@ function MainPage(props) {
                 <hr class="body_line" align="center"></hr>
                 <div class = 'body_card'>
                     <Card className="text-center">
-                        <Card.Header id='card_header'>New Announcement</Card.Header>
+                        <a href="/announcement">
+                            <Card.Header id='card_header'>
+                            New Announcement
+                            </Card.Header>
+                        </a>
                         {announcement.length > 0 ? (
                             announcement.map((item) => (
-                            <Card.Body id='card_body'>
-                            <Card.Title className ='card_title'>{item.title}</Card.Title>
-                            <Card.Text className ='card_text'>
-                            {item.text}
-                            </Card.Text>
-                            
-                        </Card.Body>
+                            <a href = {"/announcement/" + item.id  }>
+                                <Card.Body id='card_body'>
+                                    <Card.Title className ='card_title'>
+                                        {item.title}
+                                    </Card.Title>
+                                    <Card.Text className ='card_text'>
+                                    {item.text}
+                                    </Card.Text>                           
+                                </Card.Body>
+                            </a>
                         ))) : (
                         <p>No announcements available</p>
                         )}
