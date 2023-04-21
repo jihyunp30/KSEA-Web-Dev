@@ -41,7 +41,7 @@ function AnnouncementPage(props) {
         const fetchPosts = async () => {
             db
             .collection('Announcement')
-            .orderBy('time','asc')
+            .orderBy('time','desc')
             .get()
             .then((collections) => {
                 setLoading(true);
@@ -74,9 +74,10 @@ function AnnouncementPage(props) {
                 <hr id="top_line"></hr>
                
                 <div id='heading_text'>
-                    <img width="420" height="132" src={logo} />
-                </div>
-                <div>
+                    <a href = "/">
+                    <img alt = "heading_text" width="500" height="150" src={logo}/>
+                    </a>
+
                     <Nav>
                         <NavDropdown id='nav_text' title='About'>
                         <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>

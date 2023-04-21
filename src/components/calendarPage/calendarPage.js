@@ -21,16 +21,15 @@ function CalendarPage(props) {
                 <hr id="top_line"></hr>
 
                 <div id='heading_text'>
-                    <a href="/">
-                        <img alt="heading_text" width="500" height="150" src={logo} />
+                    <a href = "/">
+                    <img alt = "heading_text" width="500" height="150" src={logo}/>
                     </a>
-                </div>
-                <div>
+
                     <Nav>
                         <NavDropdown id='nav_text' title='About'>
-                            <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
-                            <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
-                            <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/about">About KSEA</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/members">Members</NavDropdown.Item>
+                        <NavDropdown.Item id='nav_subtext' href="/events">Events</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link id='nav_text' href="/calendar">Calendar</Nav.Link>
                         <Nav.Link id='nav_text' href="/announcement">Announcement</Nav.Link>
