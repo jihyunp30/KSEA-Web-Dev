@@ -6,10 +6,7 @@
     --dblue: #82918b;
     --red: #f1005d;
 } 
-body {
-    margin-top: 80px; 
 
-  }
 html{
   /* margin:10px auto; */
  
@@ -17,16 +14,32 @@ html{
   height:98%;
 }
 
+#banner { 
+    position: static; 
+    top: 0; 
+    left: 0; 
+    background-color: #ffffff; 
+    width: 100%; 
+  }
+  div#banner-content {
+    
+    margin-left: 5em ; 
+    padding: 10px; 
+    float: left;
+
+  }
+
+
 #heading {
     margin: 0;
     padding: 0;
     width: 100%;
     
-    position: fixed;
-    top: 0;
+    position: static;
+    top: 20;
     
     /* background-color: var(--lblue); */
-    background-color: whitesmoke;
+    background-color: white;
     /* border-radius: 5px; */
     /* padding-top: 5px; */
     display: flex;
@@ -55,7 +68,7 @@ html{
 
 #nav_text {
     color: black;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 #nav_subtext {
     color: black;
